@@ -30,39 +30,37 @@ const useCountUp = (end, duration = 1500) => {
 
 const AboutStats = () => {
   return (
-    <section className="relative bg-gray-50 py-12 px-12 text-center overflow-hidden">
-      {/* Background circles */}
-      <div className="absolute top-0 left-0 w-64 h-64 bg-[#2DA3B4]/10 rounded-full -translate-x-32 -translate-y-32"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#2DA3B4]/10 rounded-full translate-x-48 translate-y-48"></div>
-
+    <section className="py-16 px-6  text-center border-t border-white/5">
       {/* Heading */}
-      <div className="relative z-10 max-w-3xl mx-auto mb-12">
-        <p className="text-sm font-bold text-[#2DA3B4] uppercase tracking-wider mb-2">Our Achievements</p>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Our <span className="bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] bg-clip-text text-transparent">Progress</span>
+      <div className="max-w-3xl mx-auto mb-14">
+        <p className="text-xs border max-w-40 mx-auto rounded-3xl  py-1 font-bold text-cyan-200 uppercase tracking-widest mb-3">
+          Our Achievements
+        </p>
+        <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 tracking-tight">
+          Measurable <span className='text-cyan-200'>Progress</span> 
         </h2>
-        <p className="text-gray-600 text-base md:text-lg">
-          TOJO GLOBAL connects your business directly to your target audience, eliminating the need to search for clients. They'll find their way to you.
+        <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed">
+          We connect your business directly to your target audience, eliminating the need to search for clients. They'll find their way to you.
         </p>
       </div>
 
       {/* Stats grid */}
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 md:gap-5 max-w-6xl mx-auto">
         {stats.map((stat) => {
           const count = useCountUp(stat.value);
           const Icon = stat.icon;
           return (
             <div
               key={stat.id}
-              className="bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col items-center"
+              className="bg-white/[0.02] border border-cyan-400/40 shadow shadow-gray-200 rounded-xl p-6 flex flex-col items-center justify-center transition-colors hover:bg-white/[0.04]"
             >
-              <div className="w-14 h-14 mb-4 flex items-center justify-center rounded-lg bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4]">
-                <Icon className="w-6 h-6 text-white" />
-              </div>
-              <h3 className="text-3xl md:text-4xl font-bold text-[#2DA3B4]">
-                {count.toLocaleString()}{stat.suffix}
+              <Icon className="w-8 h-8 p-2 rounded-md bg-cyan-200 text-black mb-3" />
+              <h3 className="text-2xl md:text-3xl font-bold text-cyan-500 mb-1">
+                {count.toLocaleString()}<span className="text-cyan-500">{stat.suffix}</span>
               </h3>
-              <p className="text-gray-600 text-sm md:text-base mt-1">{stat.label}</p>
+              <p className="text-gray-400 text-[11px] md:text-xs uppercase tracking-wider mt-1 text-center">
+                {stat.label}
+              </p>
             </div>
           );
         })}

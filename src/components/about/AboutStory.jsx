@@ -1,111 +1,145 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import { motion } from "framer-motion";
 
 const AboutStory = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
+  // Animation Variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 },
+    },
+  };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.2 }
-    );
+  const slideRight = {
+    hidden: { opacity: 0, x: -40 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } },
+  };
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => {
-      if (sectionRef.current) observer.unobserve(sectionRef.current);
-    };
-  }, []);
+  const slideLeft = {
+    hidden: { opacity: 0, x: 40 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut", delay: 0.2 } },
+  };
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
 
   return (
-    <section
-      ref={sectionRef}
-      className="relative py-12 px-12   bg-gradient-to-b from-[#0c1f46]/10 via-white to-[#0c1f46]/10 overflow-hidden"
-    >
-      {/* Decorative Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#3fe8e2]/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-[#2DA3B4]/10 rounded-full blur-3xl" />
+    <section className="relative py-10 px-6  overflow-hidden">
+      {/* Dark Mode Decorative Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+
+        {/* Subtle Tech Grid Pattern */}
         <div
-          className="absolute inset-0 opacity-5"
+          className="absolute inset-0 opacity-20 pointer-events-none"
           style={{
-            backgroundImage:
-              "linear-gradient(#2DA3B4 1px, transparent 1px), linear-gradient(to right, #2DA3B4 1px, transparent 1px)",
-            backgroundSize: "50px 50px",
+            backgroundImage: `linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px)`,
+            backgroundSize: "40px 40px",
           }}
         />
       </div>
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative">
-        {/* Left Column - Text */}
-        <div
-          className={`transition-all duration-1000 transform ${
-            isVisible ? "translate-x-0 opacity-100" : "-translate-x-10 opacity-0"
-          }`}
-        >
-          <div className="flex items-center gap-3 mb-6">
-            <span className="h-1 w-12 bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] rounded-full" />
-            <p className="text-sm font-bold text-[#2DA3B4] uppercase tracking-wider">Our Story</p>
-          </div>
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center relative z-10">
 
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
-            Building Tomorrow's{" "}
-            <span className="bg-gradient-to-r from-[#3fe8e2] via-[#2DA3B4] to-[#1E6B7A] bg-clip-text text-transparent relative inline-block">
+        {/* Left Column - Text Content */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="flex flex-col justify-center"
+        >
+          <motion.div variants={slideRight} className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-400/20 bg-cyan-400/5 mb-6 w-fit">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-[0.3em]">Our Story</span>
+          </motion.div>
+
+          <motion.h2 variants={slideRight} className="text-4xl md:text-5xl lg:text-6xl font-bold  mb-8 leading-[1.1] tracking-tight">
+            Building Tomorrow's <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
               Technology Today
             </span>
-          </h2>
+          </motion.h2>
 
-          <div className="space-y-6 text-gray-600 leading-relaxed mb-8">
-            <p className="text-lg">
-              <span className="font-semibold text-[#2DA3B4]">Founded in 2014</span>, Core Codexa has grown from a small
-              startup to a trusted technology partner for businesses worldwide.
-            </p>
-            <p>
-              We specialize in web development, mobile applications, cloud solutions, and digital transformation services.
-              Our team combines technical excellence with creative innovation to deliver solutions that drive real results.
-            </p>
-            <p className="italic border-l-4 border-[#3fe8e2] pl-4 py-2 bg-white/50 rounded-r-lg">
-              "We pride ourselves on our client-focused approach, delivering projects on time and within budget while
-              maintaining the highest quality standards."
-            </p>
+          <div className="space-y-3 text-gray-400 leading-relaxed ">
+            <motion.p variants={fadeUp} className="text-base ">
+              <span className="font-bold text-black">Founded in 2014</span>, Core Codexa has evolved from a passionate tech startup into a trusted digital partner for visionary businesses worldwide.
+            </motion.p>
+
+            <motion.p variants={fadeUp}>
+              We specialize in robust web development, intuitive mobile applications, scalable cloud solutions, and complete digital transformation. Our elite team blends technical mastery with creative innovation to architect solutions that drive measurable growth.
+            </motion.p>
+
+            {/* Dark Mode Styled Quote */}
+            <motion.div variants={fadeUp} className="relative border-l-2 border-cyan-400 pl-6 py-4 bg-gradient-to-r from-cyan-400/5 to-transparent rounded-r-xl">
+              <p className="italic text-black/40 font-medium">
+                "We pride ourselves on our client-centric architecture—delivering complex projects on timeline and budget, while setting new benchmarks for quality."
+              </p>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Right Column - Image */}
-        <div
-          className={`relative transition-all duration-1000 delay-300 transform ${
-            isVisible ? "translate-x-0 opacity-100" : "translate-x-10 opacity-0"
-          }`}
+        {/* Right Column - Image & Floating Badge */}
+        <motion.div
+          variants={slideLeft}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="relative lg:ml-auto w-full max-w-lg mx-auto lg:max-w-none"
         >
-          <div className="relative group rounded-2xl overflow-hidden shadow-2xl">
+          {/* Main Image Container */}
+          <div className="relative group rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_40px_rgba(6,182,212,0.1)]">
+            {/* Image with grayscale-to-color hover effect */}
             <img
-              src="https://images.unsplash.com/photo-1580894908361-967195033215?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNvZnR3YXJlJTIwZGV2ZWxvcGVyfGVufDB8fDB8fHww"
-              alt="Core Codexa team collaborating in modern office"
-              className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700"
+              src="https://images.unsplash.com/photo-1580894908361-967195033215?fm=jpg&q=60&w=3000&auto=format&fit=crop"
+              alt="Core Codexa engineering team"
+              className="w-full h-auto object-cover transform scale-105 group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 ease-out"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#2DA3B4]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            {/* Dark gradient overlay so the image doesn't clash with dark theme */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#020215] via-transparent to-transparent opacity-80" />
 
-            {/* Floating experience badge */}
-            <div className="absolute -bottom-0 -left-0 bg-gradient-to-br from-[#2DA3B4] to-[#1E6B7A] rounded-xl px-5 py-3 shadow-2xl transform hover:scale-105 transition-transform duration-300">
-              <div className="flex items-center gap-3">
-                <div>
-                  <div className="text-white font-bold text-4xl leading-none">10+</div>
-                  <div className="text-white/80 text-sm font-medium">Years of Excellence</div>
+            {/* Subtle cyan glow overlay on hover */}
+            <div className="absolute inset-0 bg-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          </div>
+
+          {/* Floating Glassmorphism Experience Badge */}
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            viewport={{ once: true }}
+            /* Changed padding to py-4 px-6 to reduce empty vertical space and rounded to xl for a smoother look */
+            className="absolute -bottom-6 -left-6 md:-bottom-8 md:-left-8 bg-[#0E0D1D]/90 backdrop-blur-xl border border-white/10 rounded-xl py-2 px-6 shadow-xl group cursor-default"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-xl pointer-events-none" />
+
+            <div className="relative z-10 flex items-center gap-4">
+              {/* Increased height to h-12 to perfectly match the combined height of the number and text */}
+              <div className="w-1 h-4 bg-cyan-400 rounded-full" />
+
+              <div className="flex flex-col justify-center">
+                {/* Increased text size to 3xl/4xl and forced line-height to none to remove invisible gaps */}
+                <div className="text-white font-black text-2xl tracking-tighter leading-none mb-1">
+                  10<span className="text-cyan-400">+</span>
+                </div>
+
+                {/* Made subtitle uppercase and widened tracking for a high-end agency feel */}
+                <div className="text-gray-400 text-[10px]  leading-tight">
+                  Years of <br /> Excellence
                 </div>
               </div>
             </div>
+          </motion.div>
 
-           
-          </div>
+          {/* Decorative Corner Accents */}
+          <div className="absolute -z-10 -top-6 -right-6 w-24 h-24 border border-cyan-500/30 rounded-full animate-[spin_10s_linear_infinite]" />
+          <div className="absolute -z-10 -bottom-6 -right-12 w-32 h-32 border border-blue-500/20 rounded-full animate-[spin_15s_linear_infinite_reverse]" />
+        </motion.div>
 
-          {/* Decorative elements */}
-          <div className="absolute -z-10 -top-4 -right-4 w-32 h-32 border-2 border-[#3fe8e2]/20 rounded-full animate-pulse" />
-          <div className="absolute -z-10 -bottom-4 -left-4 w-24 h-24 border-2 border-[#2DA3B4]/20 rounded-full animate-pulse delay-1000" />
-        </div>
       </div>
     </section>
   );
