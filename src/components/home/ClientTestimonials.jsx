@@ -5,27 +5,27 @@ import { motion, AnimatePresence } from "framer-motion";
 const testimonials = [
   {
     rating: 5,
-    name: "BMX Adventure",
-    role: "Customer",
-    avatar: "https://img.freepik.com/free-photo/woman-showing-ok-sign_23-2148990150.jpg?semt=ais_user_personalization&w=740&q=80",
+    name: "Sarah Johnson",
+    role: "CEO, TechStart",
+    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
     quote:
-      "BMX Adventure came alive online thanks to Codes Thinker stunning design, fast performance, and powerful impact!",
+      "Core Codexa transformed our digital presence. Their team delivered a stunning website that increased our conversions by 60%!",
   },
   {
-    rating: 4.5,
-    name: "CodeMasters",
-    role: "Client",
-    avatar: "https://aircityacandheating.com/wp-content/uploads/2024/10/Testimonial-pic.jpg",
+    rating: 5,
+    name: "Michael Chen",
+    role: "Founder, DigitalHub",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     quote:
-      "Professional, creative, and extremely responsive! Codes Thinker elevated our brand online with their expertise.",
+      "Professional, timely, and incredibly talented. Core Codexa understood our vision and brought it to life perfectly.",
   },
   {
-    rating: 4,
-    name: "TechNova",
-    role: "Startup Founder",
-    avatar: "https://img.freepik.com/free-photo/smiley-woman-doing-thumbs-up_23-2148628939.jpg?semt=ais_user_personalization&w=740&q=80",
+    rating: 5,
+    name: "Emily Davis",
+    role: "Marketing Director, BrandCo",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
     quote:
-      "Our website now feels alive! Codes Thinker's designs are not only beautiful but highly functional.",
+      "Our new website has received countless compliments. Core Codexa exceeded all expectations with their design skills.",
   },
 
 
@@ -101,21 +101,21 @@ const ClientReviews = () => {
   {/* Background decor */}
   <div className="absolute top-0 left-0 bg-blue-800/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
 
-  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12 relative z-10">
     {/* Left Heading */}
-    <div className="md:w-2/5 text-center md:text-left">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-white leading-tight">
+    <div className="md:w-2/5 text-center md:text-left w-full">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight">
         Our <span className="text-[#32DFF1]">Clients,</span> <br />
         In Their Own Words
       </h2>
-      <p className="mt-4 text-gray-300 text-lg">
+      <p className="mt-4 text-gray-300 text-base sm:text-lg">
         We help brands grow by creating digital experiences that people love.
       </p>
     </div>
 
     {/* Right Testimonial */}
     <div
-      className="md:w-3/5 w-full min-h-[400px] flex flex-col justify-center"
+      className="md:w-3/5 w-full min-h-[350px] sm:min-h-[400px] flex flex-col justify-center"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -163,7 +163,7 @@ const ClientReviews = () => {
       </AnimatePresence>
 
       {/* Controls */}
-      <div className="flex items-center justify-between mt-8 px-4">
+      <div className="flex items-center justify-center mt-8 px-4">
         <div className="flex gap-3">
           {testimonials.map((_, idx) => (
             <motion.button
@@ -177,9 +177,6 @@ const ClientReviews = () => {
             />
           ))}
         </div>
-        <button className="text-[#32DFF1] font-semibold text-sm hover:underline transition-all">
-          + Add your review
-        </button>
       </div>
     </div>
   </div>

@@ -1,8 +1,8 @@
 import emailjs from '@emailjs/browser';
 
-const SERVICE_ID = 'service_1sbvdeh';
-const TEMPLATE_ID = 'template_5gu58kt';
-const PUBLIC_KEY = 'Uicjv5qvoN2Tz9cWy';
+const SERVICE_ID = 'service_1sbvdehc';
+const TEMPLATE_ID = 'template_5gu58ktc';
+const PUBLIC_KEY = 'Uicjv5qvoN2Tz9cWyc';
 
 export const sendEmail = async (formElement) => {
   try {

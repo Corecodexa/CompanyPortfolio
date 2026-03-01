@@ -52,7 +52,7 @@ const Hero = () => {
 
   return (
     <section
-      className="relative h-screen flex pt-12 items-center justify-center text-center overflow-hidden"
+      className="relative h-screen min-h-[600px] flex pt-12 items-center justify-center text-center overflow-hidden"
       style={{
         backgroundImage:
           "url(https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80)",
@@ -65,12 +65,12 @@ const Hero = () => {
 
       {/* Content */}
       <div
-        className={`relative z-10 max-w-4xl px-6 transition-all duration-500 ${
+        className={`relative z-10 max-w-4xl px-4 sm:px-6 md:px-8 transition-all duration-500 ${
           fade ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
       >
         {/* Heading */}
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
           {currentSlide.title.split(" ").map((word, i) => {
             const isHighlight = currentSlide.highlight?.includes(word);
 
@@ -90,12 +90,12 @@ const Hero = () => {
         </h1>
 
         {/* Subtitle */}
-        <p className="text-xl md:text-2xl text-gray-300 mb-4">
+        <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4">
           {currentSlide.subtitle}
         </p>
 
         {/* Description */}
-        <p className="text-lg text-gray-400 leading-relaxed mb-10 max-w-2xl mx-auto">
+        <p className="text-base sm:text-lg md:text-xl text-gray-400 leading-relaxed mb-6 sm:mb-10 max-w-2xl mx-auto">
           {currentSlide.description}
         </p>
 
@@ -113,7 +113,7 @@ const Hero = () => {
         </div>
 
         {/* Dots */}
-        <div className="flex space-x-3 mt-12 justify-center">
+        <div className="flex space-x-3 mt-8 sm:mt-12 justify-center">
           {slides.map((_, index) => (
             <button
               key={index}

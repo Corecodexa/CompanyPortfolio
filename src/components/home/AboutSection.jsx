@@ -2,11 +2,11 @@ import React from "react";
 
 const AboutSection = () => {
   return (
-    <section className="relative px-12 py-12 bg-gradient-to-b from-[#f8fafc] to-[#ffffff]">
-      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-16">
+    <section className="relative px-4 sm:px-6 md:px-12 py-12 bg-gradient-to-b from-[#f8fafc] to-[#ffffff]">
+      <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
 
         {/* LEFT COLUMN */}
-        <div className="lg:w-1/2 max-w-xl">
+        <div className="lg:w-1/2 max-w-xl w-full">
           {/* Label */}
           <div className="flex items-center gap-3 mb-4">
             <span className="h-1 w-12 bg-[#2DA3B4] rounded-full"></span>
@@ -14,7 +14,7 @@ const AboutSection = () => {
           </div>
 
           {/* Heading */}
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
             We design, develop, and{" "}
             <span className="bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] bg-clip-text text-transparent
 ">scale IT Systems</span> 
@@ -26,7 +26,7 @@ const AboutSection = () => {
           </p>
 
           {/* Stats */}
-          <div className="flex gap-8 mb-8">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mb-8">
             <div className="bg-white shadow-lg rounded-xl p-4 flex-1 text-center">
               <h3 className="text-3xl font-bold text-gray-900">99%</h3>
               <p className="text-gray-500 text-sm font-medium uppercase tracking-wide">Client Satisfaction</p>
@@ -46,8 +46,8 @@ const AboutSection = () => {
         </div>
 
         {/* RIGHT IMAGE */}
-        <div className="lg:w-ful">
-          <div className="rounded-2xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-105">
+        <div className="lg:w-full w-full mt-8 lg:mt-0">
+          <div className="rounded-2xl overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-105 relative">
             <img
               src="https://codesthinker.com/about/about2.jpg"
               alt="Our Team"

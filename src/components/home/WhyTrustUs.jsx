@@ -11,11 +11,11 @@ const WhyTrustUs = () => {
 
   return (
     <section className="py-12 bg-[#2DA3B4]/5 overflow-hidden">
-      <div className=" mx-auto px-12">
+      <div className=" mx-auto px-4 sm:px-6 md:px-12">
         
         {/* Simplified Centered Header */}
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
+        <div className="text-center mb-12 sm:mb-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 tracking-tight">
             Why <span className="text-[#2DA3B4]">Core Codexa?</span>
           </h2>
           <div className="h-1.5 w-20 bg-[#2DA3B4] mx-auto mt-4 rounded-full" />

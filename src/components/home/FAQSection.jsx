@@ -48,23 +48,23 @@ const FAQSection = () => {
       </div>
 
       {/* Content Container */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-10 items-start">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 md:gap-10 items-start">
         {/* FAQ Accordion Column */}
         <div className="md:w-1/2 w-full">
           {faqs.map((faq, index) => (
             <div 
               key={faq.id} 
-              className="mb-4 overflow-hidden transition-all duration-500"
+              className="mb-3 sm:mb-4 overflow-hidden transition-all duration-500"
             >
               {/* FAQ Button */}
               <button
                 onClick={() => toggleFAQ(index)}
-                className="w-full text-left p-4 bg-white rounded-lg shadow hover:bg-gray-100 transition-all duration-300"
+                className="w-full text-left p-3 sm:p-4 bg-white rounded-lg shadow hover:bg-gray-100 transition-all duration-300"
               >
-                <h3 className="font-semibold text-lg text-gray-800 flex justify-between items-center">
+                <h3 className="font-semibold text-base sm:text-lg text-gray-800 flex justify-between items-center">
                   {faq.question}
                   <FaChevronDown 
-                    className={`transition-transform duration-300 ${
+                    className={`transition-transform duration-300 text-sm ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
@@ -73,22 +73,22 @@ const FAQSection = () => {
 
               {/* FAQ Answer Panel */}
               <div 
-                className={`transition-all duration-500 ease-in-out overflow-hidden bg-white border-l-4 border-[#2DA3B4] text-gray-700 rounded-b-lg shadow-inner px-4 ${
+                className={`transition-all duration-500 ease-in-out overflow-hidden bg-white border-l-4 border-[#2DA3B4] text-gray-700 rounded-b-lg shadow-inner px-3 sm:px-4 ${
                   openIndex === index ? 'max-h-40' : 'max-h-0'
                 }`}
               >
-                <p className="py-3">{faq.answer}</p>
+                <p className="py-2 sm:py-3 text-sm sm:text-base">{faq.answer}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Illustration Column */}
-        <div className="md:w-1/2 w-full group">
+        <div className="md:w-1/2 w-full group mt-8 md:mt-0">
           <div className="shine-wrapper rounded-md overflow-hidden">
             <img 
               alt="FAQs Illustration" 
-              className="w-full  max-w-md mx-auto rounded-md transform transition-transform duration-500 group-hover:scale-105"
+              className="w-full max-w-md mx-auto rounded-md transform transition-transform duration-500 group-hover:scale-105"
               src="https://codesthinker.com/home/faqs.png"
             />
           </div>
