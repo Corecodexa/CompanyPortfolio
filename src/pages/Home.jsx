@@ -1,11 +1,12 @@
-import React from 'react'
+import React from 'react';
+import TeamSwiper from '../components/team/TeamSwiper';
 
 function Home() {
   return (
     <div>
-      Home
+      <TeamSwiper />
     </div>
   )
 }
 
-export default Home
+export default Home;
