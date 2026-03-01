@@ -1,14 +1,14 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #2563EB;
-  --color-primary-dark: #1D4ED8;
-  --color-primary-light: #60A5FA;
-  --color-primary-muted: rgba(37, 99, 235, 0.05);
+  --color-primary: #2DA3B4;
+  --color-primary-dark: #1E6B7A;
+  --color-primary-light: #3fe8e2;
+  --color-primary-muted: rgba(45, 163, 180, 0.05);
   --color-dark-bg: #FFFFFF;
   --color-dark-section: #F8FAFC;
   
-  --primary-rgb: 37, 99, 235;
+  --primary-rgb: 45, 163, 180;
   
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }

@@ -1,10 +1,18 @@
 import React from 'react';
-import ServiceSwiper from '../components/service/ServiceSwiper';
+import ServiceHero from '../components/service/ServiceHero';
+import ServiceOverviewCards from '../components/service/ServiceOverviewCards';
+import OurServices from '../components/service/OurServices';
+import WorkingProcess from '../components/service/WorkingProcess';
+import ServiceCTA from '../components/service/ServiceCTA';
 
 const Service = () => {
     return (
-        <main className="pt-20">
-            <ServiceSwiper />
+        <main>
+            <ServiceHero />
+            <ServiceOverviewCards />
+            <OurServices />
+            <WorkingProcess />
+            <ServiceCTA />
         </main>
     );
 };

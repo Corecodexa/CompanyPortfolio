@@ -1,112 +1,168 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { HiMenuAlt3, HiX } from 'react-icons/hi';
-import GlobalButton from './GlobalButton';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import logo from "../../assets/logo.jpeg";
+import Button from "./Button";
 
 const Navbar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const location = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 20);
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About" },
+    { path: "/service", label: "Services" },
+    { path: "/project", label: "Projects" },
+    { path: "/team", label: "Team" },
+  ];
 
-    const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'About Us', path: '/about' },
-        { name: 'Service', path: '/service' },
-        { name: 'Project', path: '/project' },
-        { name: 'Team', path: '/team' },
-    ];
+  // Scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-    return (
-        <nav 
-            className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-                isScrolled ? 'bg-white/90 backdrop-blur-md py-3 shadow-lg border-b border-gray-100' : 'bg-transparent py-5'
-            }`}
+  return (
+    <>
+      <header className="fixed top-0 left-0 w-full z-[100]">
+        <motion.nav
+          initial={{ y: -80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className={`w-full h-[70px] px-6 md:px-12 flex items-center justify-between
+            transition-all duration-500
+          ${
+            scrolled
+              ? "bg-[#020215] "
+              : "bg-[#020215]"
+          }`}
         >
-            <div className="max-w-7xl mx-auto px-4 md:px-8 flex items-center justify-between">
-                {/* Logo */}
-                <Link to="/" className="flex items-center gap-2 group">
-                    <div className="text-2xl md:text-3xl font-black tracking-tighter flex items-center">
-                        <span className="text-gray-900 group-hover:text-primary transition-colors duration-300">CORE</span>
-                        <span className="text-primary ml-1">CODEXA</span>
-                    </div>
-                </Link>
+          {/* Inner Container */}
+          <div className="w-full max-w-7xl mx-auto flex items-center justify-between">
+            
+            {/* Logo */}
+            <Link to="/" className="flex items-center gap-2">
+              <img
+                src={logo}
+                alt="Core Codexa"
+                className="h-[70px] w-full rounded-lg brightness-110 contrast-110"
+              />
+            </Link>
 
-                {/* Desktop Links */}
-                <div className="hidden md:flex items-center gap-8">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            to={link.path}
-                            className={`text-sm font-medium transition-all duration-300 hover:text-primary relative group ${
-                                location.pathname === link.path ? 'text-primary' : 'text-gray-600'
-                            }`}
-                        >
-                            {link.name}
-                            <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full ${
-                                location.pathname === link.path ? 'w-full' : ''
-                            }`} />
-                        </Link>
-                    ))}
-                    <GlobalButton 
-                        text="Get Started" 
-                        variant="primary" 
-                        className="sm" 
-                    />
-                </div>
-
-                {/* Mobile Menu Toggle */}
-                <button 
-                    className="md:hidden text-gray-900 p-2"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                >
-                    {isMobileMenuOpen ? <HiX size={28} /> : <HiMenuAlt3 size={28} />}
-                </button>
-            </div>
-
-            {/* Mobile Menu */}
-            <AnimatePresence>
-                {isMobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-white border-b border-gray-100 overflow-hidden"
+            {/* Desktop Navigation */}
+            <ul className="hidden md:flex items-center gap-2 relative">
+              {navLinks.map(({ path, label }, index) => {
+                const isActive = location.pathname === path;
+                return (
+                  <li
+                    key={path}
+                    className="relative px-4 py-2"
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                  >
+                    <Link
+                      to={path}
+                      className={`relative z-10 text-sm font-semibold uppercase tracking-wider transition-all duration-300 ${
+                        isActive
+                          ? "text-cyan-400"
+                          : "text-gray-400 hover:text-white"
+                      }`}
                     >
-                        <div className="px-4 py-6 flex flex-col gap-4">
-                            {navLinks.map((link) => (
-                                <Link
-                                    key={link.name}
-                                    to={link.path}
-                                    className={`text-lg font-semibold ${
-                                        location.pathname === link.path ? 'text-primary' : 'text-gray-900'
-                                    }`}
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                    {link.name}
-                                </Link>
-                            ))}
-                            <div className="pt-4 border-t border-gray-100">
-                                <GlobalButton 
-                                    text="Get Started" 
-                                    variant="primary" 
-                                    className="w-full" 
-                                />
-                            </div>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </nav>
-    );
+                      {label}
+                    </Link>
+
+                    {/* Hover Background */}
+                    {hoveredIndex === index && (
+                      <motion.div
+                        layoutId="nav-hover"
+                        className="absolute inset-0 bg-white/5 rounded-full z-0"
+                        transition={{
+                          type: "spring",
+                          bounce: 0.25,
+                          duration: 0.5,
+                        }}
+                      />
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+
+            {/* Action Area */}
+            <div className="flex items-center gap-4">
+              <div className="hidden md:block">
+                <Link to="/contact">
+                  <Button
+                    text="Contact Us"
+                    className="!py-2 !px-6 !text-xs uppercase tracking-widest border-cyan-500/50"
+                  />
+                </Link>
+              </div>
+
+              {/* Mobile Toggle */}
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="md:hidden flex flex-col gap-1.5 p-2"
+              >
+                <div
+                  className={`w-6 h-0.5 bg-cyan-400 transition-all duration-300 ${
+                    isOpen ? "rotate-45 translate-y-2" : ""
+                  }`}
+                />
+                <div
+                  className={`w-6 h-0.5 bg-cyan-400 transition-all duration-300 ${
+                    isOpen ? "opacity-0" : ""
+                  }`}
+                />
+                <div
+                  className={`w-6 h-0.5 bg-cyan-400 transition-all duration-300 ${
+                    isOpen ? "-rotate-45 -translate-y-2" : ""
+                  }`}
+                />
+              </button>
+            </div>
+          </div>
+        </motion.nav>
+      </header>
+
+      {/* Mobile Fullscreen Menu */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: "-100%", opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-[90] bg-[#0E0D1D]/95 backdrop-blur-2xl flex flex-col items-center justify-center p-8"
+          >
+            <div className="flex flex-col gap-10 text-center">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setIsOpen(false)}
+                  className="text-4xl font-black text-white hover:text-cyan-400 transition-all active:scale-95"
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              <Link to="/contact" onClick={() => setIsOpen(false)}>
+                <button className="mt-6 px-10 py-4 bg-cyan-500 text-black font-bold rounded-full shadow-[0_0_25px_rgba(6,182,212,0.6)] hover:scale-105 transition-all">
+                  LET'S CONNECT
+                </button>
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
 };
 
 export default Navbar;

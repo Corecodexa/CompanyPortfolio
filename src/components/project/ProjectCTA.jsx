@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
 import Button from '../common/Button';
 
-const TeamCTA = () => {
+const ProjectCTA = () => {
   return (
     <section className="relative py-12 px-6 lg:px-12 mb-12">
       <div className="max-w-4xl mx-auto">
@@ -15,23 +13,23 @@ const TeamCTA = () => {
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="text-left flex-1">
               <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-                Ready to Build the <span className="text-[#2DA3B4]">Future Together?</span>
+                Have a project <span className="text-[#2DA3B4]">in mind?</span>
               </h2>
               <p className="text-gray-500 text-sm md:text-base max-w-xl">
-                We're always looking for talented individuals to join our mission. Explore our culture and open positions.
+                Let's collaborate to build something exceptional. Our team is ready to help you bring your vision to life.
               </p>
             </div>
 
             <div className="flex flex-wrap items-center gap-6">
               <Link 
-                to="/about" 
+                to="/service" 
                 className="text-sm font-bold text-gray-600 hover:text-[#2DA3B4] transition-colors"
               >
-                Our Culture
+                Our Services
               </Link>
               <Link to="/contact">
                 <Button 
-                  text="Apply Now" 
+                  text="Let's Talk" 
                   className="bg-[#2DA3B4] hover:bg-[#1E6B7A] px-8 py-3 text-sm shadow-none"
                 />
               </Link>
@@ -43,5 +41,4 @@ const TeamCTA = () => {
   );
 };
 
-export default TeamCTA;
-
+export default ProjectCTA;
