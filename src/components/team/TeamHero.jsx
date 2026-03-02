@@ -10,7 +10,7 @@ const TeamHero = () => {
 
   return (
     <section
-      className="relative pt-12 h-screen flex items-center justify-center text-center overflow-hidden"
+      className="relative pt-20 pb-16 md:pt-24 md:pb-20 lg:pt-28 lg:pb-24 min-h-[90vh] md:min-h-screen flex items-center justify-center text-center overflow-hidden"
       aria-label="Core Codexa Team Hero Section"
     >
       {/* Optimized background image with loading state */}
@@ -55,7 +55,7 @@ const TeamHero = () => {
         </div>
 
         {/* Main heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-5xl font-bold text-white mb-4 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 leading-tight">
           Our{" "}
           <span className="bg-gradient-to-r from-[#3fe8e2] via-[#2DA3B4] to-[#1E6B7A] bg-clip-text text-transparent inline-block">
             Professional Team
@@ -64,7 +64,7 @@ const TeamHero = () => {
 
         {/* Description with animated underline */}
         <div className="relative">
-          <p className="text-gray-200 text-lg sm:text-xl md:text-2xl leading-relaxed mb-4 max-w-3xl mx-auto font-light">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-4 max-w-2xl lg:max-w-3xl mx-auto font-light">
             A diverse group of passionate innovators, designers, and developers 
             dedicated to turning your vision into digital reality.
           </p>
@@ -72,7 +72,7 @@ const TeamHero = () => {
         </div>
 
         {/* Stats section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6 mb-5 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-6 mb-5 max-w-2xl mx-auto">
           {[
             { value: '30+', label: 'Creative Minds' },
             { value: '10+', label: 'Global Offices' },

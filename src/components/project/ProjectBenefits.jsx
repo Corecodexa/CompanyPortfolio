@@ -48,7 +48,7 @@ const ProjectBenefits = () => {
   };
 
   return (
-    <section className="relative py-24 bg-[#FCFDFD] overflow-hidden">
+    <section className="relative py-12 bg-[#FCFDFD] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Header Section */}

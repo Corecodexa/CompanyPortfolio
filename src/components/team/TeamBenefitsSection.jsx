@@ -65,7 +65,7 @@ const TeamBenefitsSection = () => {
   ];
 
   return (
-    <section className="relative py-24 px-6 overflow-hidden">
+    <section className="relative py-12 bg-[#e9f0f0] px-6 overflow-hidden">
       {/* Decorative Background Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl bg-gray-50/50 rounded-[4rem] -z-10" />
       

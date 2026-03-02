@@ -37,9 +37,9 @@ const ProjectHero = () => {
         />
       </div>
 
-      {/* Animated accent lines */}
-      <div className="absolute top-0 left-0 w-32 h-32 border-l-4 border-t-4 border-[#3fe8e2]/30 rounded-tl-3xl" />
-      <div className="absolute bottom-0 right-0 w-32 h-32 border-r-4 border-b-4 border-[#3fe8e2]/30 rounded-br-3xl" />
+      {/* Animated accent lines - hidden on mobile */}
+      <div className="absolute top-0 left-0 w-16 h-16 md:w-24 lg:w-32 md:h-32 border-l-2 md:border-l-4 border-t-2 md:border-t-4 border-[#3fe8e2]/30 rounded-tl-2xl md:rounded-tl-3xl" />
+      <div className="absolute bottom-0 right-0 w-16 h-16 md:w-24 lg:w-32 md:h-32 border-r-2 md:border-r-4 border-b-2 md:border-b-4 border-[#3fe8e2]/30 rounded-br-2xl md:rounded-br-3xl" />
 
       {/* Content with animation */}
       <div 
@@ -55,7 +55,7 @@ const ProjectHero = () => {
         </div>
 
         {/* Main heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-5xl font-bold text-white mb-4 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 leading-tight">
           Success{" "}
           <span className="bg-gradient-to-r from-[#3fe8e2] via-[#2DA3B4] to-[#1E6B7A] bg-clip-text text-transparent inline-block">
             In Every Project
@@ -64,15 +64,15 @@ const ProjectHero = () => {
 
         {/* Description with animated underline */}
         <div className="relative">
-          <p className="text-gray-200 text-lg sm:text-xl md:text-2xl leading-relaxed mb-4 max-w-3xl mx-auto font-light">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-200 leading-relaxed mb-4 max-w-2xl md:max-w-3xl mx-auto font-light">
             Explore our diverse portfolio of digital transformations and innovative 
             solutions that have empowered businesses across the globe.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] mx-auto rounded-full" />
+          <div className="w-16 md:w-20 lg:w-24 h-1 bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] mx-auto rounded-full" />
         </div>
 
         {/* Stats section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6 mb-5 max-w-2xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-6 mt-5 md:mt-6 mb-4 md:mb-5 max-w-2xl mx-auto">
           {[
             { value: '100+', label: 'Successful Projects' },
             { value: '50+', label: 'Global Clients' },
@@ -80,24 +80,24 @@ const ProjectHero = () => {
           ].map((stat, index) => (
             <div 
               key={index}
-              className="text-center py-2 px-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
+              className="text-center py-2 md:py-2 px-2 md:px-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
             >
-              <div className="text-2xl md:text-3xl font-bold text-[#3fe8e2]">{stat.value}</div>
-              <div className="text-sm text-gray-300 mt-1">{stat.label}</div>
+              <div className="text-xl md:text-2xl lg:text-3xl font-bold text-[#3fe8e2]">{stat.value}</div>
+              <div className="text-xs md:text-sm text-gray-300 mt-1">{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* CTA Button with hover effect */}
-        <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="mt-4 md:mt-5 flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
           <Button 
             text="View Case Studies" 
             variant="primary"
             size="large"
-            className="group relative overflow-hidden bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] hover:from-[#2DA3B4] hover:to-[#3fe8e2] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#3fe8e2]/20"
+            className="group relative overflow-hidden bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] hover:from-[#2DA3B4] hover:to-[#3fe8e2] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#3fe8e2]/20 text-sm md:text-base px-5 md:px-6"
             icon={
               <svg 
-                className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" 
+                className="w-4 h-4 md:w-5 md:h-5 ml-1 md:ml-2 group-hover:translate-x-1 transition-transform" 
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24"
@@ -108,10 +108,10 @@ const ProjectHero = () => {
           />
           
           {/* Secondary CTA */}
-          <button className="px-6 py-3 text-white border border-white/30 rounded-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 group">
+          <button className="px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base text-white border border-white/30 rounded-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 group">
             <span>Start a Project</span>
             <svg 
-              className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" 
+              className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:translate-y-0.5 transition-transform" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"

@@ -10,7 +10,7 @@ const OverviewCard = ({ icon: Icon, title, description, color, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500"
+      className="group relative bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500"
     >
       {/* Decorative Glow */}
       <div 
@@ -45,7 +45,7 @@ const ServiceOverviewCards = () => {
       icon: Lightbulb,
       title: "Innovative Strategy",
       description: "We craft future-ready digital roadmaps that challenge industry norms and redefine user expectations.",
-      color: "#0ea5e9" // Sky
+      color: "#2DA3B4" // Sky
     },
     {
       icon: Rocket,
@@ -57,18 +57,18 @@ const ServiceOverviewCards = () => {
       icon: Users2,
       title: "User Centric",
       description: "Every solution is built with the end-user in mind, focusing on intuitive experiences and high engagement.",
-      color: "#8b5cf6" // Violet
+      color: "#2DA3B4" // Violet
     },
     {
       icon: ShieldCheck,
       title: "Enterprise Security",
       description: "We bake enterprise-grade encryption and security protocols into every layer of our digital products.",
-      color: "#3fe8e2" // Brand Secondary
+      color: "#2DA3B4" // Brand Secondary
     }
   ];
 
   return (
-    <section className="py-20 px-6 lg:px-12 bg-[#fafbfc]">
+    <section className="py-12 px-6 lg:px-12 bg-[#fafbfc]">
       <div className="max-w-7xl mx-auto">
         <GlobalHeading 
           badge="Overview"
