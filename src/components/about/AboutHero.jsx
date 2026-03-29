@@ -11,7 +11,7 @@ const AboutHero = () => {
 
   return (
     <section
-      className="relative pt-12 h-screen flex items-center justify-center text-center overflow-hidden"
+      className="relative pt-16 pb-16 md:pt-20 md:pb-20 min-h-screen flex items-center justify-center text-center overflow-hidden"
       aria-label="About Core Codexa Hero Section"
     >
       {/* Optimized background image with loading state */}
@@ -39,8 +39,8 @@ const AboutHero = () => {
       </div>
 
       {/* Animated accent lines */}
-      <div className="absolute top-0 left-0 w-32 h-32 border-l-4 border-t-4 border-[#3fe8e2]/30 rounded-tl-3xl" />
-      <div className="absolute bottom-0 right-0 w-32 h-32 border-r-4 border-b-4 border-[#3fe8e2]/30 rounded-br-3xl" />
+      <div className="absolute top-0 left-0 w-16 h-16 md:w-32 md:h-32 border-l-2 md:border-l-4 border-t-2 md:border-t-4 border-[#3fe8e2]/30 rounded-tl-3xl" />
+      <div className="absolute bottom-0 right-0 w-16 h-16 md:w-32 md:h-32 border-r-2 md:border-r-4 border-b-2 md:border-b-4 border-[#3fe8e2]/30 rounded-br-3xl" />
 
       {/* Content with animation */}
       <div
@@ -49,13 +49,13 @@ const AboutHero = () => {
       >
         {/* Eyebrow text */}
         <div className="mb-4 inline-block">
-          <span className="px-4 py-2 text-sm font-medium text-[#3fe8e2] bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+          <span className="px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm font-medium text-[#3fe8e2] bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
             Welcome to Innovation
           </span>
         </div>
 
         {/* Main heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-5xl  font-bold text-white mb-4 leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 leading-tight">
           About{" "}
           <span className="bg-gradient-to-r from-[#3fe8e2] via-[#2DA3B4] to-[#1E6B7A] bg-clip-text text-transparent inline-block">
             Core Codexa
@@ -64,31 +64,43 @@ const AboutHero = () => {
 
         {/* Description with animated underline */}
         <div className="relative">
+<<<<<<< HEAD
           <p className="text-gray-200 text-lg sm:text-xl md:text-2xl leading-relaxed mb-4 max-w-3xl mx-auto font-light">
             We are a leading technology company delivering innovative digital solutions
+=======
+          <p className="text-gray-200 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-4 max-w-2xl lg:max-w-3xl mx-auto font-light">
+            We are a leading technology company delivering innovative digital solutions 
+>>>>>>> f03808aa8152741542b1428bbb01eb7ada8e68ea
             that help businesses thrive in the modern digital landscape.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] mx-auto rounded-full" />
+          <div className="w-20 h-1 md:w-24 bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] mx-auto rounded-full" />
         </div>
 
         {/* Stats section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6 mb-5 max-w-2xl mx-auto">
+        <div className="grid grid-cols-3 gap-2 md:gap-4 mt-5 mb-5 max-w-2xl mx-auto">
           {[
+<<<<<<< HEAD
             { value: '200+', label: 'Projects Delivered' },
             { value: '30+', label: 'Expert Team' },
             { value: '100%', label: 'Client Satisfaction' }
+=======
+            { value: '50+', label: 'Projects' },
+            { value: '30+', label: 'Team' },
+            { value: '95%', label: 'Satisfaction' }
+>>>>>>> f03808aa8152741542b1428bbb01eb7ada8e68ea
           ].map((stat, index) => (
             <div
               key={index}
-              className="text-center py-2 px-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
+              className="text-center py-2 md:py-3 px-1 md:px-3 rounded-lg md:rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
             >
-              <div className="text-2xl md:text-3xl font-bold text-[#3fe8e2]">{stat.value}</div>
-              <div className="text-sm text-gray-300 mt-1">{stat.label}</div>
+              <div className="text-xl md:text-2xl lg:text-3xl font-bold text-[#3fe8e2]">{stat.value}</div>
+              <div className="text-xs md:text-sm text-gray-300 mt-0.5 md:mt-1">{stat.label}</div>
             </div>
           ))}
         </div>
 
         {/* CTA Button with hover effect */}
+<<<<<<< HEAD
         <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link to='/contact'>
             <button
@@ -114,6 +126,33 @@ const AboutHero = () => {
               className="w-4 h-4 group-hover:translate-y-0.5 transition-transform"
               fill="none"
               stroke="currentColor"
+=======
+        <div className="mt-4 md:mt-6 flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
+          <Button 
+            text="Contact Us" 
+            variant="primary"
+            size="large"
+            className="group relative overflow-hidden bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] hover:from-[#2DA3B4] hover:to-[#3fe8e2] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#3fe8e2]/20 text-sm md:text-base px-5 md:px-6 py-2.5 md:py-3"
+            icon={
+              <svg 
+                className="w-4 h-4 ml-1.5 md:w-5 md:h-5 md:ml-2 group-hover:translate-x-1 transition-transform" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            }
+          />
+          
+          {/* Secondary CTA */}
+          <button className="px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base text-white border border-white/30 rounded-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 group">
+            <span>Our Story</span>
+            <svg 
+              className="w-3.5 h-3.5 md:w-4 md:h-4 group-hover:translate-y-0.5 transition-transform" 
+              fill="none" 
+              stroke="currentColor" 
+>>>>>>> f03808aa8152741542b1428bbb01eb7ada8e68ea
               viewBox="0 0 24 24"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />

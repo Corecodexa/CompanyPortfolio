@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
-import { FaChevronDown } from 'react-icons/fa';
 
-const FAQSection = () => {
+import React, { useState } from 'react';
+
+const FaqSection = () => {
   const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleFAQ = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   const faqs = [
     {
@@ -32,70 +36,69 @@ const FAQSection = () => {
     }
   ];
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
 
   return (
-    <div className="py-12 px-4 md:px-16 bg-gray-50 overflow-hidden">
-      {/* Section Header */}
-      <div className="text-center mb-10">
-        <p className="text-gray-600 text-sm">Have You Any Question</p>
-        <h1 className="text-2xl md:text-4xl font-bold">
-          <span className="">Frequently</span>{' '}
-          <span className='bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] bg-clip-text text-transparent'>Asked Questions</span>
-        </h1>
-      </div>
+    <div className="bg-gray-50 py-16 px-4">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-stretch">
+        {/* left column: header + accordion */}
+        <div className="flex flex-col">
+          <div className="text-left mb-8" style={{ opacity: 1, transform: 'none' }}>
+            <h2 className="text-2xl md:text-4xl font-bold text-gray-800">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-600 mt-2">
+              Everything you need to know about Core Condexa services.
+            </p>
+          </div>
 
-      {/* Content Container */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-6 md:gap-10 items-start">
-        {/* FAQ Accordion Column */}
-        <div className="md:w-1/2 w-full">
-          {faqs.map((faq, index) => (
-            <div 
-              key={faq.id} 
-              className="mb-3 sm:mb-4 overflow-hidden transition-all duration-500"
-            >
-              {/* FAQ Button */}
-              <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full text-left p-3 sm:p-4 bg-white rounded-lg shadow hover:bg-gray-100 transition-all duration-300"
+          <div className="space-y-4 flex-1">
+            {faqs.map((faq, index) => (
+              <div
+                key={index}
+                className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow hover:shadow-lg hover:shadow-cyan-500/20 transition-all"
+                style={{ opacity: 1, transform: 'none' }}
               >
-                <h3 className="font-semibold text-base sm:text-lg text-gray-800 flex justify-between items-center">
-                  {faq.question}
-                  <FaChevronDown 
-                    className={`transition-transform duration-300 text-sm ${
-                      openIndex === index ? 'rotate-180' : ''
-                    }`}
-                  />
-                </h3>
-              </button>
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full group cursor-pointer px-5 py-2 text-left flex items-center justify-between hover:bg-gradient-to-r from-cyan-500/10 to-[#2DA3B4]/10 transition-all"
+                >
+                  <div className="flex items-center gap-4">
+                    <div
+                      className="sm:w-12 w-8 sm:h-12 h-8 rounded-full flex items-center justify-center bg-[#2DA3B4] group-hover:bg-[#1a7a85] transition-all text-white"
+                    >
+                      <span className="text-white text-sm sm:text-lg font-bold">{index + 1}</span>
+                    </div>
+                    <span className="font-semibold text-gray-800 sm:text-lg group-hover:text-[#2DA3B4] transition-all">
+                      {faq.question}
+                    </span>
+                  </div>
+                  <span className="text-2xl font-light text-[#2DA3B4] group-hover:text-gray-800 transition-all">
+                    {openIndex === index ? '−' : '+'}
+                  </span>
+                </button>
 
-              {/* FAQ Answer Panel */}
-              <div 
-                className={`transition-all duration-500 ease-in-out overflow-hidden bg-white border-l-4 border-[#2DA3B4] text-gray-700 rounded-b-lg shadow-inner px-3 sm:px-4 ${
-                  openIndex === index ? 'max-h-40' : 'max-h-0'
-                }`}
-              >
-                <p className="py-2 sm:py-3 text-sm sm:text-base">{faq.answer}</p>
+                {/* collapsible answer */}
+                {openIndex === index && (
+                  <div className="px-5 py-4 text-gray-600 border-t border-gray-100 bg-gray-50">
+                    {faq.answer}
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        {/* Illustration Column */}
-        <div className="md:w-1/2 w-full group mt-8 md:mt-0">
-          <div className="shine-wrapper rounded-md overflow-hidden">
-            <img 
-              alt="FAQs Illustration" 
-              className="w-full max-w-md mx-auto rounded-md transform transition-transform duration-500 group-hover:scale-105"
-              src="https://codesthinker.com/home/faqs.png"
-            />
-          </div>
+        {/* right column: image */}
+        <div className="h-full flex" style={{ opacity: 1, transform: 'none' }}>
+          <img
+            alt="Core Condexa FAQ Illustration"
+            className="rounded-2xl shadow-lg w-full h-full object-cover hover:translate-y-1 transition-all duration-300"
+            src="https://lh7-us.googleusercontent.com/-TP8G9BYgYbI4Oq_7r6Pz4GoPBhJrDgT5BMq1PKP0KF826nAOHdK0aCxl4Ddk5us944nf5wvRPPTde3NcCutR2VReWjeCIH_Jhuwcr1scM5UdM5ZQyCDXP-CSql2E4AN5UlbmH_vukWDMdcSZuQWswQ"
+          />
         </div>
       </div>
     </div>
   );
 };
 
-export default FAQSection;
+export default FaqSection;

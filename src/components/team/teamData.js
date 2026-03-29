@@ -12,11 +12,11 @@ const team = [
     },
   },
   {
-    name: "Haseeb Abbasi",
-    role: "Business Developer",
-    image: "/images-team/haseeb.jpg",
-    bio: "Haseeb accelerates business growth by forging strong client relationships and expanding strategic opportunities.",
-    socials: { linkedin: "#", facebook: "#" }
+    name: "Sadiq Hussain",
+    role: "Mern Stack Developer",
+    image: "https://scontent.fbhv2-1.fna.fbcdn.net/v/t39.30808-6/600402534_122284622900024088_4918499374240806544_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=106&ccb=1-7&_nc_sid=53a332&_nc_eui2=AeGiGC4S-911UHPqOK3cRoQpuNr7fM021uK42vt8zTbW4h-MBw_gYLrGGQLUhIoOZf2ENrrRH0vDiEZBGGIJ2yvP&_nc_ohc=bPQvcP-HRZgQ7kNvwF2Lcjc&_nc_oc=AdldB0zWKJXJNQC6I51K7lavrwrjEcur6ecXDAFXSNeeP-CYQhvcrQx99WH2KiLTX4T_m-eMKcCLnOnSv5JhFduN&_nc_zt=23&_nc_ht=scontent.fbhv2-1.fna&_nc_gid=eXVPcxtb_XwZhesJt7uJhg&_nc_ss=8&oh=00_Afzlg610HRqvwM1QNuIQcSTSNGuS8GtWCA8wxYygP3cpqg&oe=69AB4245",
+    bio: "Hello! I'm Sadiq Hussain, a passionate Mern Stack Developer specializing in building complete web solutions. I excel in both frontend React/Next.js and backend Node.js/Express, with expertise in database design and API development.",
+    socials: { linkedin: "https://www.linkedin.com/in/sadiq-hussain-9a85a2334/", facebook: "https://www.facebook.com/sadiq.hussain.33120" }
   },
   {
     name: "Rashid Ghafoor",
@@ -25,111 +25,7 @@ const team = [
     bio: "Rashid delivers full-stack web apps using Java, Python, and Node.js with modern UI frameworks like React and Angular.",
     socials: { linkedin: "#", github: "#" }
   },
-  {
-    name: "Rashid Hussain",
-    role: "Software Developer",
-    image: "/images-team/rashid.jpg",
-    bio: "Rashid builds robust backend systems with Django, specializing in scalable architectures and secure APIs.",
-    socials: { linkedin: "#", github: "#" }
-  },
-  {
-    name: "Usman Akhtar",
-    role: "MERN Stack Developer",
-    image: "/images-team/usman.jpg",
-    bio: "Usman delivers full-stack solutions using MongoDB, Express, React, and Node.js with a focus on performance.",
-    socials: { linkedin: "#", github: "#" }
-  },
-  {
-    name: "Zeshan Yousaf",
-    role: "Mean Stack Developer",
-    image: "/images-team/zeeshanYousaf.jpg",
-    bio: "Zeshan crafts dynamic web apps with Angular and Node.js, ensuring responsive design and seamless user experience.",
-    socials: { linkedin: "#", github: "#" }
-  },
-  {
-    name: "M. Zeeshan Baqir",
-    role: "Python (Django) Developer",
-    image: "/images-team/zesshan.jpg",
-    bio: "Zeeshan builds secure backend systems with Django, focusing on clean architecture and scalable API design.",
-    socials: { linkedin: "#", github: "#" }
-  },
-  {
-    name: "Areeba Asghar",
-    role: "Frontend Web Developer",
-    image: "/images-team/areeba.jpg",
-    bio: "Areeba creates sleek, responsive interfaces with modern frontend tech, enhancing user experience and design.",
-    socials: { linkedin: "#", instagram: "#" }
-  },
-  {
-    name: "Nimra Hannan",
-    role: "Machine Learning Developer",
-    image: "/images-team/nimra.jpg",
-    bio: "Nimra develops intelligent ML solutions, turning complex data into actionable insights through smart algorithms.",
-    socials: { linkedin: "#", github: "#" }
-  },
-  {
-    name: "Sana Anum",
-    role: "App Developer",
-    image: "/images-team/sanaAnum.jpg",
-    bio: "Sana builds responsive, user-friendly mobile apps with an eye for detail, performance, and clean functionality.",
-    socials: { linkedin: "#", facebook: "#" }
-  },
-  {
-    name: "Mahnoor Mughal",
-    role: "Shopify Developer",
-    image: "/images-team/mahnoor.jpg",
-    bio: "Mahnoor builds high-converting, customized Shopify stores with a focus on performance, design, and user experience.",
-    socials: { linkedin: "#", instagram: "#" }
-  },
-  {
-    name: "Ayesha Shoaib",
-    role: "WordPress Developer",
-    image: "/images-team/ayeshaShoaib.jpg",
-    bio: "Ayesha builds custom WordPress sites, e-commerce stores, and dashboards with a focus on UX and performance.",
-    socials: { linkedin: "#", facebook: "#" }
-  },
-  {
-    name: "Aurang Zaib",
-    role: "SEO",
-    image: "/images-team/aurangzeb.jpg",
-    bio: "Aurang boosts online presence through advanced SEO, driving traffic, visibility, and high search rankings.",
-    socials: { linkedin: "#", twitter: "#" }
-  },
-  {
-    name: "Arooba Naveed",
-    role: "Digital Marketing Specialist",
-    image: "/images-team/aroobaNaveed.jpg",
-    bio: "Arooba drives online growth through smart marketing, SEO, and lead generation strategies tailored to business goals.",
-    socials: { linkedin: "#", facebook: "#" }
-  },
-  {
-    name: "Mubashir Khan",
-    role: "UI/UX Designer",
-    image: "/images-team/mubashir.jpg",
-    bio: "Mubashir designs intuitive interfaces and user journeys that blend visual appeal with seamless functionality.",
-    socials: { linkedin: "#", instagram: "#" }
-  },
-  {
-    name: "Sadia Nadeem",
-    role: "Graphic Designer",
-    image: "/images-team/sadiaNadeem.jpg",
-    bio: "Sadia creates visually compelling designs using Photoshop, Illustrator, and Canva, elevating brands with style.",
-    socials: { linkedin: "#", facebook: "#" }
-  },
-  {
-    name: "Harris Shehzad",
-    role: "Forex Trading",
-    image: "/images-team/harrisShehzad.jpg",
-    bio: "Harris merges his expertise in trading and development to create efficient and data-driven digital platforms.",
-    socials: { linkedin: "#", twitter: "#" }
-  },
-  {
-    name: "Zara Hameed",
-    role: "Content Writer",
-    image: "/images-team/content.jpg",
-    bio: "Zara brings stories to life with words, creating impactful content that connects, informs, and inspires.",
-    socials: { linkedin: "#", twitter: "#" }
-  },
+ 
 ];
 
 export default team;
