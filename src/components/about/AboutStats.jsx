@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { FaBriefcase, FaSmile, FaGlobe, FaDollarSign, FaChartLine } from 'react-icons/fa';
 
 const stats = [
-  { id: 1, value: 4, suffix: '+', label: 'Years of Experience', icon: FaBriefcase },
-  { id: 2, value: 50, suffix: '+', label: 'Satisfied Clients', icon: FaSmile },
+  { id: 1, value: 5, suffix: '+', label: 'Years of Experience', icon: FaBriefcase },
+  { id: 2, value: 150, suffix: '+', label: 'Satisfied Clients', icon: FaSmile },
   { id: 3, value: 17, suffix: '+', label: 'Countries We Operate', icon: FaGlobe },
   { id: 4, value: 20, suffix: '+', label: 'Managed Marketing Fund', icon: FaDollarSign },
-  { id: 5, value: 290, suffix: '+', label: 'Clients Gains', icon: FaChartLine },
+  { id: 5, value: 150, suffix: '+', label: 'Clients Gains', icon: FaChartLine },
 ];
 
 // Simple count-up hook

@@ -34,20 +34,36 @@ const ServiceCard = ({ icon, title, description }) => {
 
 const OurServices = () => {
   const services = [
-    { 
-      icon: <Palette />, 
-      title: "Web Designing", 
-      description: "We deliver modern, responsive web designs tailored to align with your brand identity and business objectives." 
-    },
+   
     { 
       icon: <Code />, 
-      title: "Web Development", 
-      description: "Our development team builds high-performance websites using the latest technologies to ensure scalability and security." 
+      title: "Full stack Development", 
+      description: "We provide comprehensive full stack development services, offering seamless integration between front-end and back-end systems." 
     },
     { 
       icon: <Smartphone />, 
       title: "Mobile App Development", 
       description: "We develop robust and visually appealing cross-platform mobile applications using Flutter for Android, iOS, and the web." 
+    },
+    { 
+      icon: <Layers />, 
+      title: "Game Development", 
+      description: "End-to-end game development where world-class front-end design meets powerful back-end integration. We build seamless, scalable, and immersive digital worlds" 
+    },
+    { 
+      icon: <Terminal />, 
+      title: "AI/ML Development", 
+      description: "Our AI/ML development team builds robust, scalable applications tailored to meet diverse business requirements." 
+    },
+     { 
+      icon: <Database />, 
+      title: "Laravel Development", 
+      description: "Our Laravel development solutions are secure, scalable, and tailored to support complex business logic and workflows." 
+    },
+    { 
+      icon: <Globe />, 
+      title: "WordPress Development", 
+      description: "We create custom WordPress websites that are user-friendly, mobile-responsive, and optimized for performance." 
     },
     { 
       icon: <BarChart />, 
@@ -64,21 +80,7 @@ const OurServices = () => {
       title: "Content Writing", 
       description: "Our content team delivers impactful, SEO-optimized content tailored to your brand’s voice and target audience." 
     },
-    { 
-      icon: <Layers />, 
-      title: "Full Stack Development", 
-      description: "We provide comprehensive full stack development services, offering seamless integration between front-end and back-end systems." 
-    },
-    { 
-      icon: <Database />, 
-      title: "Laravel Development", 
-      description: "Our Laravel development solutions are secure, scalable, and tailored to support complex business logic and workflows." 
-    },
-    { 
-      icon: <Globe />, 
-      title: "WordPress Development", 
-      description: "We create custom WordPress websites that are user-friendly, mobile-responsive, and optimized for performance." 
-    },
+   
     { 
       icon: <Image />, 
       title: "Graphics Designing", 
@@ -89,11 +91,7 @@ const OurServices = () => {
       title: "UI/UX Designing", 
       description: "We specialize in designing intuitive and engaging user experiences that drive user satisfaction and retention." 
     },
-    { 
-      icon: <Terminal />, 
-      title: "Python Development", 
-      description: "Our Python development team builds robust, scalable applications tailored to meet diverse business requirements." 
-    },
+    
     { 
       icon: <Video />, 
       title: "2D & 3D Animations", 

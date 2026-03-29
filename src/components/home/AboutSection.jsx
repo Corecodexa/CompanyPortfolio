@@ -6,7 +6,7 @@ const AboutSection = () => {
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
 
         {/* LEFT COLUMN */}
-        <div className="lg:w-1/2 max-w-xl w-full">
+        <div className="lg:w-2/2 max-w-xl w-full">
           {/* Label */}
           <div className="flex items-center gap-3 mb-4">
             <span className="h-1 w-12 bg-[#2DA3B4] rounded-full"></span>
@@ -28,7 +28,7 @@ const AboutSection = () => {
           {/* Stats */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 mb-8">
             <div className="bg-white shadow-lg rounded-xl p-4 flex-1 text-center">
-              <h3 className="text-3xl font-bold text-gray-900">99%</h3>
+              <h3 className="text-3xl font-bold text-gray-900">100%</h3>
               <p className="text-gray-500 text-sm font-medium uppercase tracking-wide">Client Satisfaction</p>
             </div>
             <div className="bg-white shadow-lg rounded-xl p-4 flex-1 text-center">

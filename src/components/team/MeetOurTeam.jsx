@@ -16,8 +16,8 @@ const TeamMember = ({ member, index, onClick }) => {
       className="group cursor-pointer"
     >
       <div className="relative space-y-5">
-        {/* Image Wrapper */}
-        <div className="relative aspect-[3/4] overflow-hidden bg-slate-100">
+        
+        <div className="relative aspect-[3.6/4] overflow-hidden bg-slate-100">
           <img
             src={member.image}
             alt={member.name}
@@ -27,10 +27,8 @@ const TeamMember = ({ member, index, onClick }) => {
             }}
           />
           
-          {/* Subtle Overlay on Hover */}
           <div className="absolute inset-0 bg-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          
-          {/* Minimal Social Buttons */}
+        
           <div className="absolute bottom-4 left-4 flex gap-2 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-75">
             {member.socials?.linkedin && (
               <div className="w-9 h-9 bg-white flex items-center justify-center text-slate-900 hover:bg-primary hover:text-white transition-colors duration-300 shadow-sm">
@@ -45,7 +43,6 @@ const TeamMember = ({ member, index, onClick }) => {
           </div>
         </div>
 
-        {/* Text Content */}
         <div className="space-y-2 px-1">
           <div className="flex items-baseline justify-between gap-4">
             <h3 className="text-xl font-light text-slate-900 tracking-tight leading-none group-hover:text-primary transition-colors duration-300">
@@ -77,10 +74,10 @@ const MeetOurTeam = () => {
   };
 
   return (
-    <section className="py-24 px-6 bg-white">
+    <section className="py-10 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
         {/* Header Section */}
-        <div className="mb-20">
+        <div className="mb-10">
           <GlobalHeading 
             badge="Expertise"
             title="Our"

@@ -41,7 +41,7 @@ const ServiceCard = ({ icon, title, description }) => {
 
       {/* CTA */}
       <Link
-        to="/contact"
+        to="/services"
         className="inline-flex items-center gap-2 text-sm font-semibold text-[#2DA3B4] transition-all duration-300 group-hover:gap-3"
       >
         Learn More
@@ -98,7 +98,7 @@ const Services = () => {
   ];
 
   return (
-    <section className="relative px-4 sm:px-6 md:px-12 py-20 bg-[#f8fafc] overflow-hidden">
+    <section className="relative px-4 sm:px-6 md:px-12 py-10 bg-[#f8fafc] overflow-hidden">
 
       {/* Background Glow Effects */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#3fe8e2]/20 rounded-full blur-[120px]" />
@@ -130,11 +130,11 @@ const Services = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 text-center">
+        {/* <div className="mt-16 text-center">
           <Link to="/contact">
             <Button text="Enroll Now" />
           </Link>
-        </div>
+        </div> */}
 
       </div>
     </section>

@@ -55,7 +55,7 @@ const TeamHero = () => {
         </div>
 
         {/* Main heading */}
-        <h1 className="text-4xl sm:text-5xl md:text-5xl font-bold text-white mb-4 leading-tight">
+        <h1 className="text-2xl sm:text-5xl md:text-5xl font-bold text-white mb-4 leading-tight">
           Our{" "}
           <span className="bg-gradient-to-r from-[#3fe8e2] via-[#2DA3B4] to-[#1E6B7A] bg-clip-text text-transparent inline-block">
             Professional Team
@@ -72,54 +72,23 @@ const TeamHero = () => {
         </div>
 
         {/* Stats section */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6 mb-5 max-w-2xl mx-auto">
+        <div className="flex  items-center justify-center  gap-6 mt-6 mb-5 max-w-xl mx-auto">
           {[
             { value: '30+', label: 'Creative Minds' },
-            { value: '10+', label: 'Global Offices' },
+            // { value: '10+', label: 'Global Offices' },
             { value: '24/7', label: 'Dedicated Support' }
           ].map((stat, index) => (
             <div 
               key={index}
               className="text-center py-2 px-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
             >
-              <div className="text-2xl md:text-3xl font-bold text-[#3fe8e2]">{stat.value}</div>
-              <div className="text-sm text-gray-300 mt-1">{stat.label}</div>
+              <button className="text-xl md:text-2xl  md:px-4 font-bold text-[#3fe8e2]">{stat.value}</button><br />
+              <button className="text-sm md:px-4 text-gray-300 mt-1">{stat.label}</button>
             </div>
           ))}
         </div>
 
-        {/* CTA Button with hover effect */}
-        <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            text="Join Our Team" 
-            variant="primary"
-            size="large"
-            className="group relative overflow-hidden bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] hover:from-[#2DA3B4] hover:to-[#3fe8e2] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#3fe8e2]/20"
-            icon={
-              <svg 
-                className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            }
-          />
-          
-          {/* Secondary CTA */}
-          <button className="px-6 py-3 text-white border border-white/30 rounded-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 group">
-            <span>Our Culture</span>
-            <svg 
-              className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </button>
-        </div>
+        
       </div>
     </section>
   );

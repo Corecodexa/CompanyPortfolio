@@ -21,7 +21,7 @@ const ContactHero = () => {
           className="absolute inset-0 bg-cover bg-center transition-transform duration-[20s] scale-105 hover:scale-110"
           style={{
             backgroundImage: `url(https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1920&q=80)`,
-            backgroundSize: "cover",
+            backgroundSize: "cover", 
             backgroundPosition: "center",
           }}
           role="img"
@@ -69,7 +69,7 @@ const ContactHero = () => {
         </div>
 
         {/* CTA Button with hover effect */}
-        <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
+        {/* <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button
             text="Send a Message"
             variant="primary"
@@ -86,7 +86,7 @@ const ContactHero = () => {
               </svg>
             }
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );

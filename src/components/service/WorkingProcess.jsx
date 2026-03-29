@@ -45,7 +45,7 @@ const WorkingProcess = () => {
   ];
 
   return (
-    <section className="py-16 bg-slate-50 text-slate-900 overflow-hidden">
+    <section className="py-10 bg-slate-50 text-slate-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <GlobalHeading 
           badge="Our Blueprint"

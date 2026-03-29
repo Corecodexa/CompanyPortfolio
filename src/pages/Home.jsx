@@ -16,7 +16,6 @@ function Home() {
       <AboutSection/>
       <WhyTrustUs/>
       <CaseStudies/>
-    
       <ClientTestimonials/>
       <FAQSection/>
     </div>

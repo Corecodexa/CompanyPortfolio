@@ -1,148 +1,105 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// 4. Variants for the main cards (Info Cards) - for internal stagger
+// Refined Stagger Variants
 const cardContainerVariants = {
-  visible: {
-    transition: {
-      delayChildren: 0.1,
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-// 3. Variants for staggered items (list items)
-const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
+      when: "beforeChildren",
+      staggerChildren: 0.15,
+      duration: 0.6,
       ease: "easeOut",
     },
   },
 };
 
+const itemVariants = {
+  hidden: { opacity: 0, x: -10 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.4 },
+  },
+};
 
-const ContactInfo = ({ MapPinIcon, PhoneIcon, MailIcon, DownloadIcon, HistoryIcon, HelpCircleIcon }) => {
+const ContactInfo = ({ MapPinIcon, PhoneIcon, MailIcon }) => {
+  const contactDetails = [
+    {
+      icon: <MailIcon size={20} />,
+      label: "Email",
+      value: "corecodexa@gmail.com",
+      subtext: "Typical reply: 24h",
+    },
+    {
+      icon: <PhoneIcon size={20} />,
+      label: "Phone",
+      value: "+92 301 6981096",
+      subtext: "Mon-Fri, 9AM-6PM",
+    },
+    {
+      icon: <MapPinIcon size={20} />,
+      label: "Office",
+      value: "Core Codexa, Bahawalpur",
+      subtext: "Pakistan",
+    },
+  ];
+
   return (
-    <>
-      {/* Contact Info Card */}
-      <motion.div 
-        className="bg-white rounded-xl shadow-lg border border-slate-100 p-5 h-full"
-        variants={cardContainerVariants}
-      >
-        <motion.h3 
-          className="font-bold text-[#1e1e1e] text-base mb-5"
-          variants={itemVariants}
-        >
-          Contact Information
-        </motion.h3>
-
-        <div className="space-y-5">
-          {/* Email Item */}
-          <motion.div className="flex gap-4 items-start" variants={itemVariants}>
-            <div className="w-10 h-10 rounded-full bg-[#3fe8e2]/10 flex items-center justify-center shrink-0 text-[#2DA3B4]">
-              <MailIcon size={16} />
-            </div>
-            <div>
-              <h4 className="font-bold text-slate-800 text-sm mb-1">Email</h4>
-              <p className="text-slate-500 text-sm">contact@corecodexa.com</p>
-              <p className="text-slate-400 text-xs mt-1">Typically replies within 24 hours</p>
-            </div>
-          </motion.div>
-
-          {/* Phone Item */}
-          <motion.div className="flex gap-4 items-start" variants={itemVariants}>
-            <div className="w-10 h-10 rounded-full bg-[#3fe8e2]/10 flex items-center justify-center shrink-0 text-[#2DA3B4]">
-              <PhoneIcon size={16} />
-            </div>
-            <div>
-              <h4 className="font-bold text-slate-800 text-sm mb-1">Phone</h4>
-              <p className="text-slate-500 text-sm">+92 336-6760604</p>
-              <p className="text-slate-400 text-xs mt-1">WhatsApp Available (9AM - 6PM PKT)</p>
-            </div>
-          </motion.div>
-
-          {/* Office Item */}
-          <motion.div className="flex gap-4 items-start" variants={itemVariants}>
-            <div className="w-10 h-10 rounded-full bg-[#3fe8e2]/10 flex items-center justify-center shrink-0 text-[#2DA3B4]">
-              <MapPinIcon size={16} />
-            </div>
-            <div>
-              <h4 className="font-bold text-slate-800 text-sm mb-1">Office</h4>
-              <p className="text-slate-500 text-sm">Core Codexa, Bahawalpur, Pakistan</p>
-              <p className="text-slate-400 text-xs mt-1">Visit by appointment only</p>
-            </div>
-          </motion.div>
-        </div>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={cardContainerVariants}
+      className="relative overflow-hidden bg-white/80 backdrop-blur-md rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100 p-8"
+    >
+      {/* Decorative Background Element */}
+      <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#3fe8e2]/5 rounded-full blur-3xl" />
+      
+      <motion.div variants={itemVariants} className="mb-8">
+        <h3 className="text-2xl font-extrabold text-slate-900 tracking-tight">
+          Get in <span className="text-[#2DA3B4]">Touch</span>
+        </h3>
+        <p className="text-slate-500 text-sm mt-1">We're here to help you scale.</p>
       </motion.div>
 
-      {/* Quick Support Card */}
-      <motion.div 
-        className="bg-white rounded-xl shadow-lg border border-slate-100 p-5 h-full"
-        variants={cardContainerVariants}
-      >
-        <motion.div 
-          className="flex items-center gap-3 mb-5"
-          variants={itemVariants}
-        >
-          <div className="w-5 h-5 rounded-full bg-[#2DA3B4] text-white flex items-center justify-center text-xs font-bold">?</div>
-          <h3 className="font-bold text-[#1e1e1e] text-base">Quick Support</h3>
-        </motion.div>
-
-        <div className="space-y-4">
-          {/* Brochure */}
-          <motion.a 
-            href="#" 
-            className="flex gap-4 group items-center p-2 rounded-lg hover:bg-[#3fe8e2]/10 transition-colors"
+      <div className="space-y-6">
+        {contactDetails.map((item, index) => (
+          <motion.div
+            key={index}
             variants={itemVariants}
             whileHover={{ x: 5 }}
+            className="group flex items-center gap-5 p-3 rounded-2xl transition-colors hover:bg-slate-50/50"
           >
-            <div className="w-10 h-10 rounded-full bg-[#3fe8e2]/10 flex items-center justify-center shrink-0 text-[#2DA3B4] group-hover:bg-[#2DA3B4] group-hover:text-white transition-all">
-              <DownloadIcon size={16} />
+            {/* Icon with Gradient Glow */}
+            <div className="relative">
+              <div className="absolute inset-0 bg-[#3fe8e2] opacity-20 blur-lg group-hover:opacity-40 transition-opacity" />
+              <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-[#3fe8e2] to-[#2DA3B4] flex items-center justify-center text-white shadow-lg shadow-teal-200/50">
+                {item.icon}
+              </div>
             </div>
-            <div>
-              <h4 className="font-bold text-slate-800 text-sm group-hover:text-[#2DA3B4] transition-colors">Download Brochure</h4>
-              <p className="text-slate-500 text-xs">Access our company portfolio</p>
-            </div>
-          </motion.a>
 
-          {/* Portfolio */}
-          <motion.a 
-            href="#" 
-            className="flex gap-4 group items-center p-2 rounded-lg hover:bg-[#3fe8e2]/10 transition-colors"
-            variants={itemVariants}
-            whileHover={{ x: 5 }}
-          >
-            <div className="w-10 h-10 rounded-full bg-[#3fe8e2]/10 flex items-center justify-center shrink-0 text-[#2DA3B4] group-hover:bg-[#2DA3B4] group-hover:text-white transition-all">
-              <HistoryIcon size={16} />
+            <div className="flex-1">
+              <h4 className="text-[10px] uppercase tracking-widest font-bold text-slate-400 mb-0.5">
+                {item.label}
+              </h4>
+              <p className="font-semibold text-slate-800 text-base leading-tight">
+                {item.value}
+              </p>
+              <p className="text-xs text-slate-400 mt-1 font-medium">
+                {item.subtext}
+              </p>
             </div>
-            <div>
-              <h4 className="font-bold text-slate-800 text-sm group-hover:text-[#2DA3B4] transition-colors">Our Portfolio / FAQs</h4>
-              <p className="text-slate-500 text-xs">View our projects and common questions</p>
+            
+            {/* Subtle arrow that appears on hover */}
+            <div className="opacity-0 group-hover:opacity-100 transition-opacity text-slate-300 pr-2">
+               →
             </div>
-          </motion.a>
-
-          {/* Help */}
-          <motion.a 
-            href="#" 
-            className="flex gap-4 group items-center p-2 rounded-lg hover:bg-[#3fe8e2]/10 transition-colors"
-            variants={itemVariants}
-            whileHover={{ x: 5 }}
-          >
-            <div className="w-10 h-10 rounded-full bg-[#3fe8e2]/10 flex items-center justify-center shrink-0 text-[#2DA3B4] group-hover:bg-[#2DA3B4] group-hover:text-white transition-all">
-              <HelpCircleIcon size={16} />
-            </div>
-            <div>
-              <h4 className="font-bold text-slate-800 text-sm group-hover:text-[#2DA3B4] transition-colors">Need Help? Visit FAQs</h4>
-              <p className="text-slate-500 text-xs">Find answers to common questions</p>
-            </div>
-          </motion.a>
-        </div>
-      </motion.div>
-    </>
+          </motion.div>
+        ))}
+      </div>
+    </motion.div>
   );
 };
 

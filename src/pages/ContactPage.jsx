@@ -2,7 +2,7 @@
 import ContactHero from '../components/contact/ContactHero';
 import GetInTouch from '../components/contact/GetInTouch';
 import LocationSection from '../components/contact/LocationSection';
-import ContactCTA from '../components/contact/ContactCTA';
+// import ContactCTA from '../components/contact/ContactCTA';
 
 
 const ContactPage = () => {
@@ -11,7 +11,7 @@ const ContactPage = () => {
       <ContactHero />
       <GetInTouch />
       <LocationSection />
-      <ContactCTA />
+      {/* <ContactCTA /> */}
     </main>
   );
 };

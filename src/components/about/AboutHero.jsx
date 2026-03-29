@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Button from "../common/Button";
+import { Link } from "react-router-dom";
 
 const AboutHero = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -27,9 +28,9 @@ const AboutHero = () => {
         />
         {/* Animated gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/70 to-black/80" />
-        
+
         {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-10" 
+        <div className="absolute inset-0 opacity-10"
           style={{
             backgroundImage: `radial-gradient(circle at 2px 2px, white 1px, transparent 0)`,
             backgroundSize: '40px 40px'
@@ -42,10 +43,9 @@ const AboutHero = () => {
       <div className="absolute bottom-0 right-0 w-32 h-32 border-r-4 border-b-4 border-[#3fe8e2]/30 rounded-br-3xl" />
 
       {/* Content with animation */}
-      <div 
-        className={`relative z-10 px-4 sm:px-6 max-w-4xl mx-auto transition-all duration-1000 transform ${
-          isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}
+      <div
+        className={`relative z-10 px-4 sm:px-6 max-w-4xl mx-auto transition-all duration-1000 transform ${isLoaded ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}
       >
         {/* Eyebrow text */}
         <div className="mb-4 inline-block">
@@ -65,7 +65,7 @@ const AboutHero = () => {
         {/* Description with animated underline */}
         <div className="relative">
           <p className="text-gray-200 text-lg sm:text-xl md:text-2xl leading-relaxed mb-4 max-w-3xl mx-auto font-light">
-            We are a leading technology company delivering innovative digital solutions 
+            We are a leading technology company delivering innovative digital solutions
             that help businesses thrive in the modern digital landscape.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] mx-auto rounded-full" />
@@ -74,11 +74,11 @@ const AboutHero = () => {
         {/* Stats section */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6 mb-5 max-w-2xl mx-auto">
           {[
-            { value: '50+', label: 'Projects Delivered' },
+            { value: '200+', label: 'Projects Delivered' },
             { value: '30+', label: 'Expert Team' },
-            { value: '95%', label: 'Client Satisfaction' }
+            { value: '100%', label: 'Client Satisfaction' }
           ].map((stat, index) => (
-            <div 
+            <div
               key={index}
               className="text-center py-2 px-3 rounded-xl bg-white/5 backdrop-blur-sm border border-white/10"
             >
@@ -90,38 +90,38 @@ const AboutHero = () => {
 
         {/* CTA Button with hover effect */}
         <div className="mt-4 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            text="Contact Us" 
-            variant="primary"
-            size="large"
-            className="group relative overflow-hidden bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] hover:from-[#2DA3B4] hover:to-[#3fe8e2] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#3fe8e2]/20"
-            icon={
-              <svg 
-                className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            }
-          />
-          
+          <Link to='/contact'>
+            <button
+              className="group px-6 py-3 relative overflow-hidden bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] hover:from-[#2DA3B4] rounded-lg hover:to-[#3fe8e2] transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-[#3fe8e2]/20"
+              icon={
+                <svg
+                  className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              }
+            >Contact Us</button>
+          </Link>
+
+
           {/* Secondary CTA */}
-          <button className="px-6 py-3 text-white border border-white/30 rounded-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 group">
+          {/* <button className="px-6 py-3 text-white border border-white/30 rounded-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 group">
             <span>Our Story</span>
-            <svg 
-              className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" 
-              fill="none" 
-              stroke="currentColor" 
+            <svg
+              className="w-4 h-4 group-hover:translate-y-0.5 transition-transform"
+              fill="none"
+              stroke="currentColor"
               viewBox="0 0 24 24"
             >
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
-          </button>
+          </button> */}
         </div>
 
-       
+
       </div>
     </section>
   );

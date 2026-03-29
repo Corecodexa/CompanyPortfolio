@@ -28,8 +28,8 @@ const Footer = () => {
   const socialLinks = [
     { id: 1, icon: FaFacebookF, label: 'Facebook', url: '#' },
     { id: 2, icon: FaTwitter, label: 'Twitter', url: '#' },
-    { id: 3, icon: FaInstagram, label: 'Instagram', url: '#' },
-    { id: 4, icon: FaLinkedinIn, label: 'Linkedin', url: '#' }
+    { id: 3, icon: FaInstagram, label: 'Instagram', url: 'https://www.instagram.com/usamajoiya.786?igsh=eThtYnRwbnBrZm9m' },
+    { id: 4, icon: FaLinkedinIn, label: 'Linkedin', url: 'https://www.linkedin.com/in/corecodexa/' }
   ];
 
   return (
@@ -127,8 +127,8 @@ const Footer = () => {
             <ul className="space-y-3.5 md:space-y-3 sm:space-y-2.5">
               <li className="flex items-center gap-3 text-gray-400 text-sm">
                 <FaPhone className="text-[#299caf] hover:text-[#299caf] text-xl flex-shrink-0" />
-                <a href="tel:92 336-6760604" className="hover:text-[#299caf] transition-colors duration-300">
-                  92 336-6760604
+                <a href="tel:92 301 6981096" className="hover:text-[#299caf] transition-colors duration-300">
+                  +92 301 6981096
                 </a>
               </li>
 

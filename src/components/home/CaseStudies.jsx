@@ -2,6 +2,7 @@ import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Button from "../common/Button";
+import { Link } from "react-router-dom";
 
 const CaseStudies = () => {
   const projects = useMemo(
@@ -52,11 +53,10 @@ const CaseStudies = () => {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={`px-5 cursor-pointer py-2 rounded-full text-sm font-semibold transition-all duration-300 border 
-              ${
-                activeCategory === cat
+              ${activeCategory === cat
                   ? "bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] text-white border-transparent shadow-md"
                   : "bg-white text-gray-600 border-gray-200 hover:border-[#2DA3B4] hover:text-[#2DA3B4]"
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -120,7 +120,9 @@ const CaseStudies = () => {
 
         {/* CTA */}
         <div className="mt-20 text-center">
-          <Button text="View All Projects" />
+          <Link to='/project'>
+            <Button text="View All Projects" />
+          </Link>
         </div>
       </div>
     </section>

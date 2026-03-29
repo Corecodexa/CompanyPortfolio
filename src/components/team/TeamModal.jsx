@@ -23,7 +23,7 @@ const TeamModal = ({ member, isOpen, onClose }) => {
             initial={{ opacity: 0, scale: 0.98, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.98, y: 10 }}
-            className="relative w-full max-w-3xl bg-white overflow-hidden shadow-2xl flex flex-col md:flex-row min-h-[450px]"
+            className="relative w-full max-w-3xl bg-white overflow-hidden shadow-2xl flex flex-col md:flex-row md:min-h-[450px] min-h-[350px]"
           >
             {/* Close Button */}
             <button
@@ -36,7 +36,7 @@ const TeamModal = ({ member, isOpen, onClose }) => {
             </button>
 
             {/* Left: Image Section (Fixed 40% width) */}
-            <div className="w-full md:w-[40%] h-64 md:h-auto relative bg-slate-100 overflow-hidden">
+            <div className="w-full md:w-[40%] h-50  md:h-auto relative bg-slate-100 overflow-hidden">
               <img
                 src={member.image}
                 alt={member.name}
@@ -48,13 +48,13 @@ const TeamModal = ({ member, isOpen, onClose }) => {
             </div>
 
             {/* Right: Info Section (60%) */}
-            <div className="w-full md:w-[60%] p-8 md:p-10 flex flex-col justify-center bg-white">
-              <header className="mb-6">
+            <div className="w-full md:w-[60%] p-3 md:p-10 flex flex-col justify-center bg-white">
+              <header className="mb-">
                 <p className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
                   {member.role}
                 </p>
                 <h2 className="text-3xl font-light text-slate-900 tracking-tight leading-tight">
-                  {member.name.split(' ')[0]} <br />
+                  {member.name.split(' ')[0]} {''}
                   <span className="font-serif italic text-2xl">{member.name.split(' ').slice(1).join(' ')}</span>
                 </h2>
               </header>

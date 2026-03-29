@@ -106,8 +106,9 @@ const LocationSection = () => {
                 }
             }}
           >
+         
             <iframe 
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537353153167!3d-37.81720997975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sus!4v1645666822942!5m2!1sen!2sus" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3476.1759957422155!2d71.6910481741293!3d29.39440714907881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393b90ea2c287683%3A0x5af317295d38cf87!2sGoheer%20Town%20Gulshan%20E%20Farid%20Colony%2C%20Bahawalpur%2C%2063100%2C%20Pakistan!5e0!3m2!1sen!2s!4v1774792608127!5m2!1sen!2s" 
               width="100%" 
               height="100%" 
               style={{ border: 0 }} 
@@ -118,46 +119,6 @@ const LocationSection = () => {
             ></iframe>
           </motion.div>
 
-          {/* Location Footer Bar (Staggered items) */}
-          <div className="px-4 py-3 md:px-5 md:py-4 flex flex-col md:flex-row items-center justify-between gap-3 bg-white border-t border-slate-100">
-            
-            {/* Address Details */}
-            <motion.div 
-              className="text-center md:text-left"
-              variants={itemVariants} // Animation for address block
-            >
-              <h4 className="font-bold text-[#1e1e1e] text-sm md:text-base">Headquarters</h4>
-              <p className="text-slate-500 text-xs md:text-sm">Core Codexa, Bahawalpur, Punjab, Pakistan</p>
-            </motion.div>
-            
-            {/* Buttons */}
-            <div className="flex gap-2 flex-wrap justify-center">
-              
-              {/* Get Directions Button */}
-              <motion.button 
-                className="px-4 py-2 bg-gradient-to-r from-[#00134F] to-[#2DA3B4] text-white text-xs font-medium rounded-lg shadow-sm flex items-center gap-1.5"
-                variants={buttonVariants}
-                whileHover="hover"
-                // Adding custom tap animation for interaction feel
-                whileTap={{ scale: 0.95 }} 
-              >
-                <Navigation size={12} />
-                Get Directions
-              </motion.button>
-              
-              {/* Copy Address Button */}
-              <motion.button 
-                className="px-4 py-2 bg-white border border-slate-200 text-slate-700 text-xs font-medium rounded-lg shadow-sm flex items-center gap-1.5"
-                variants={buttonVariants}
-                whileHover={{ scale: 1.05, boxShadow: "0 8px 20px -5px rgba(0, 0, 0, 0.1)" }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Copy size={12} />
-                Copy Address
-              </motion.button>
-
-            </div>
-          </div>
         </motion.div>
       </div>
     </motion.div>

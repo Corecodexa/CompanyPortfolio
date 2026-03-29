@@ -101,7 +101,7 @@ const Hero = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to={currentSlide.link}>
+          <Link to='/project'>
             <Button text="Explore Services" />
           </Link>
 

@@ -49,7 +49,7 @@ const OurValues = () => {
           initial={{ opacity: 0, y: -10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-400/20 bg-cyan-400/5 mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />

@@ -64,23 +64,25 @@ const AboutStory = () => {
               Technology Today
             </span>
           </motion.h2>
+          <section id="story">
+            <div className="space-y-3 text-gray-400 leading-relaxed ">
+              <motion.p variants={fadeUp} className="text-base ">
+                <span className="font-bold text-black">Founded in 2021</span>, Core Codexa has evolved from a passionate tech startup into a trusted digital partner for visionary businesses worldwide.
+              </motion.p>
 
-          <div className="space-y-3 text-gray-400 leading-relaxed ">
-            <motion.p variants={fadeUp} className="text-base ">
-              <span className="font-bold text-black">Founded in 2014</span>, Core Codexa has evolved from a passionate tech startup into a trusted digital partner for visionary businesses worldwide.
-            </motion.p>
+              <motion.p variants={fadeUp}>
+                We specialize in robust web development, intuitive mobile applications, scalable cloud solutions, and complete digital transformation. Our elite team blends technical mastery with creative innovation to architect solutions that drive measurable growth.
+              </motion.p>
 
-            <motion.p variants={fadeUp}>
-              We specialize in robust web development, intuitive mobile applications, scalable cloud solutions, and complete digital transformation. Our elite team blends technical mastery with creative innovation to architect solutions that drive measurable growth.
-            </motion.p>
+              {/* Dark Mode Styled Quote */}
+              <motion.div variants={fadeUp} className="relative border-l-2 border-cyan-400 pl-6 py-4 bg-gradient-to-r from-cyan-400/5 to-transparent rounded-r-xl">
+                <p className="italic text-black/40 font-medium">
+                  "We pride ourselves on our client-centric architecture—delivering complex projects on timeline and budget, while setting new benchmarks for quality."
+                </p>
+              </motion.div>
+            </div>
+          </section>
 
-            {/* Dark Mode Styled Quote */}
-            <motion.div variants={fadeUp} className="relative border-l-2 border-cyan-400 pl-6 py-4 bg-gradient-to-r from-cyan-400/5 to-transparent rounded-r-xl">
-              <p className="italic text-black/40 font-medium">
-                "We pride ourselves on our client-centric architecture—delivering complex projects on timeline and budget, while setting new benchmarks for quality."
-              </p>
-            </motion.div>
-          </div>
         </motion.div>
 
         {/* Right Column - Image & Floating Badge */}
@@ -124,7 +126,7 @@ const AboutStory = () => {
               <div className="flex flex-col justify-center">
                 {/* Increased text size to 3xl/4xl and forced line-height to none to remove invisible gaps */}
                 <div className="text-white font-black text-2xl tracking-tighter leading-none mb-1">
-                  10<span className="text-cyan-400">+</span>
+                  5<span className="text-cyan-400">+</span>
                 </div>
 
                 {/* Made subtitle uppercase and widened tracking for a high-end agency feel */}

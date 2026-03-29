@@ -1,13 +1,13 @@
 const team = [
   {
-    name: "Usama Joiya,(C.E.O)",
+    name: "Usama Joiya (C.E.O)",
     role: "Full Stack Web & App Developer",
     image: "/images-team/usama.jpg",
     bio: "Usama drives innovation with expertise in full-stack development, building secure, scalable, and modern applications.",
     socials: {
       facebook: "https://www.facebook.com/share/1J7AjN61xV/",
       twitter: "https://x.com/Corecodexa",
-      linkedin: "https://www.linkedin.com/in/usama-joiya/",
+      linkedin: "https://www.linkedin.com/in/corecodexa/",
       instagram: "https://www.instagram.com/usamajoiya.786?igsh=eThtYnRwbnBrZm9m",
     },
   },

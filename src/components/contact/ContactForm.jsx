@@ -1,195 +1,152 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { toast } from 'sonner';
-import { sendEmail } from '../../utils/emailService';
+import emailjs from '@emailjs/browser'; // Make sure to npm install @emailjs/browser
 
-// 4. Variants for the main cards (Form Card) - for internal stagger
+// Animation Variants
 const cardContainerVariants = {
-  visible: {
-    transition: {
-      delayChildren: 0.1, // Start internal stagger slightly later
-      staggerChildren: 0.08,
-    },
-  },
-};
-
-// 3. Variants for staggered items (inputs, list items)
-const itemVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.4,
-      ease: "easeOut",
+      when: "beforeChildren",
+      staggerChildren: 0.1,
+      duration: 0.6
     },
   },
 };
 
-// 5. Variants for the primary button (Send Message)
-const buttonVariants = {
-  hidden: { scale: 0.8, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 10,
-    },
-  },
-  // Adding hover effect using whileHover
-  hover: {
-    scale: 1.02,
-    boxShadow: "0 10px 15px -3px rgba(45, 163, 180, 0.4), 0 4px 6px -2px rgba(45, 163, 180, 0.2)",
-  }
+const itemVariants = {
+  hidden: { opacity: 0, y: 15 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
 };
 
 const ContactForm = ({ Icon, UserIcon, MailIcon, FileTextIcon, ChevronDownIcon, HelpCircleIcon, MessageSquareIcon }) => {
   const formRef = useRef(null);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
 
-    const result = await sendEmail(formRef.current);
-    setLoading(false);
+    // EmailJS Configuration
+    const SERVICE_ID = "service_og6u2al";
+    const TEMPLATE_ID = "template_n268753";
+    const PUBLIC_KEY = "5rdVBXHI_svOaqGAq";
 
-    if (result.success) {
-      toast.success('Message sent successfully!', {
-        description: 'We\'ll get back to you as soon as possible.',
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
+      .then((result) => {
+        toast.success('Message sent successfully!', {
+          description: "We'll get back to you shortly.",
+        });
+        formRef.current.reset();
+      }, (error) => {
+        toast.error('Failed to send message', {
+          description: "Please check your connection or try again later.",
+        });
+        console.error("EmailJS Error:", error.text);
+      })
+      .finally(() => {
+        setLoading(false);
       });
-      formRef.current.reset();
-    } else {
-      toast.error('Failed to send message', {
-        description: 'Please try again later or contact us directly.',
-      });
-    }
   };
+
+  const inputClasses = "block w-full pl-10 pr-4 py-3 border border-slate-200 rounded-xl bg-slate-50/50 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-[#2DA3B4]/10 focus:border-[#2DA3B4] focus:bg-white text-sm transition-all duration-300";
 
   return (
     <motion.div 
-      className="bg-white rounded-xl shadow-lg overflow-hidden border border-slate-100 h-full"
+      initial="hidden"
+      animate="visible"
       variants={cardContainerVariants}
+      className="bg-white rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-slate-100 h-full overflow-hidden"
     >
-      {/* Form Header */}
-      <motion.div 
-        className="bg-gradient-to-r from-[#00134F] to-[#2DA3B4] p-5 text-white flex items-center gap-3"
-        variants={itemVariants}
-      >
-        <Icon className="w-5 h-5 -rotate-60" />
-        <div>
-          <h3 className="font-bold text-lg">Send us a Message</h3>
-          <p className="text-cyan-100 text-xs">We'll respond as soon as possible</p>
-        </div>
-      </motion.div>
+      {/* Header Section */}
+      <div className="p-8 pb-4">
+        <motion.div variants={itemVariants} className="flex items-center gap-3 mb-2">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#00134F] to-[#2DA3B4] flex items-center justify-center text-white shadow-lg shadow-cyan-200/50">
+            <Icon size={20} className="-rotate-45" />
+          </div>
+          <h3 className="font-extrabold text-2xl text-slate-900 tracking-tight">Send a Message</h3>
+        </motion.div>
+        <p className="text-slate-500 text-sm ml-1">Have a project? We'd love to hear from you.</p>
+      </div>
 
-      {/* Form Fields */}
-      <form ref={formRef} onSubmit={handleSubmit} className="p-5 md:p-6 space-y-4">
+      {/* Form Section */}
+      <form ref={formRef} onSubmit={handleSubmit} className="p-8 pt-2 space-y-4">
         
-        {/* Name */}
-        <motion.div className="relative" variants={itemVariants}>
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <UserIcon className="h-4 w-4 text-slate-400" />
-          </div>
-          <input
-            type="text"
-            name="user_name"
-            required
-            className="block w-full pl-9 pr-3 py-2.5 border border-slate-200 rounded-lg leading-5 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2DA3B4]/30 focus:border-[#2DA3B4] text-sm transition-all"
-            placeholder="Your Full Name"
-          />
-        </motion.div>
+        {/* Name and Email in a Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <motion.div className="relative" variants={itemVariants}>
+            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <UserIcon size={18} />
+            </div>
+            <input type="text" name="user_name" required className={inputClasses} placeholder="Full Name" />
+          </motion.div>
 
-        {/* Email */}
-        <motion.div className="relative" variants={itemVariants}>
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <MailIcon className="h-4 w-4 text-slate-400" />
-          </div>
-          <input
-            type="email"
-            name="user_email"
-            required
-            className="block w-full pl-9 pr-3 py-2.5 border border-slate-200 rounded-lg leading-5 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2DA3B4]/30 focus:border-[#2DA3B4] text-sm transition-all"
-            placeholder="Your Email Address"
-          />
-        </motion.div>
+          <motion.div className="relative" variants={itemVariants}>
+            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <MailIcon size={18} />
+            </div>
+            <input type="email" name="user_email" required className={inputClasses} placeholder="Email Address" />
+          </motion.div>
+        </div>
 
-        {/* Topic Select */}
-        <motion.div className="relative" variants={itemVariants}>
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <FileTextIcon className="h-4 w-4 text-slate-400" />
-          </div>
-          <select
-            name="topic"
-            required
-            className="block w-full pl-9 pr-8 py-2.5 border border-slate-200 rounded-lg leading-5 bg-white text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#2DA3B4]/30 focus:border-[#2DA3B4] text-sm appearance-none transition-all"
-          >
-            <option value="">Choose a Topic</option>
-            <option value="Web Development">Web Development</option>
-            <option value="UI/UX Design">UI/UX Design</option>
-            <option value="Mobile App Development">Mobile App Development</option>
-            <option value="Cloud Solutions">Cloud Solutions</option>
-            <option value="General Inquiry">General Inquiry</option>
-          </select>
-          <div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-            <ChevronDownIcon className="h-3 w-3 text-slate-400" />
-          </div>
-        </motion.div>
+        {/* Topic and Subject in a Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <motion.div className="relative" variants={itemVariants}>
+            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <FileTextIcon size={18} />
+            </div>
+            <select name="topic" required className={`${inputClasses} appearance-none`}>
+              <option value="">Select Topic</option>
+              <option value="Web Development">Web Development</option>
+              <option value="UI/UX Design">UI/UX Design</option>
+              <option value="Mobile App">Mobile App</option>
+              <option value="Consultation">Consultation</option>
+            </select>
+            <div className="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-slate-400">
+              <ChevronDownIcon size={14} />
+            </div>
+          </motion.div>
 
-        {/* Subject */}
-        <motion.div className="relative" variants={itemVariants}>
-          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <HelpCircleIcon className="h-4 w-4 text-slate-400" />
-          </div>
-          <input
-            type="text"
-            name="subject"
-            required
-            className="block w-full pl-9 pr-3 py-2.5 border border-slate-200 rounded-lg leading-5 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2DA3B4]/30 focus:border-[#2DA3B4] text-sm transition-all"
-            placeholder="Subject"
-          />
-        </motion.div>
+          <motion.div className="relative" variants={itemVariants}>
+            <div className="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+              <HelpCircleIcon size={18} />
+            </div>
+            <input type="text" name="subject" required className={inputClasses} placeholder="Subject" />
+          </motion.div>
+        </div>
 
-        {/* Message */}
+        {/* Message Box */}
         <motion.div className="relative" variants={itemVariants}>
           <textarea
-            rows={5}
+            rows={4}
             name="message"
             required
-            className="block w-full p-3 border border-slate-200 rounded-lg leading-5 bg-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#2DA3B4]/30 focus:border-[#2DA3B4] text-sm transition-all resize-none"
-            placeholder="Your Message"
+            className="block w-full p-4 border border-slate-200 rounded-2xl bg-slate-50/50 placeholder-slate-400 focus:outline-none focus:ring-4 focus:ring-[#2DA3B4]/10 focus:border-[#2DA3B4] focus:bg-white text-sm transition-all resize-none"
+            placeholder="Tell us more about your inquiry..."
           />
-          <div className="absolute bottom-3 right-3">
-            <MessageSquareIcon className="h-3 w-3 text-slate-300" />
-          </div>
         </motion.div>
 
-        {/* Send Button */}
+        {/* Submit Button */}
         <motion.button 
           type="submit"
           disabled={loading}
-          className="w-full bg-gradient-to-r from-[#00134F] to-[#2DA3B4] hover:from-[#2DA3B4] hover:to-[#00134F] text-white font-bold py-3 rounded-lg shadow-md transition-all duration-300 flex items-center justify-center gap-2 text-sm mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
-          variants={buttonVariants}
-          whileHover={!loading ? "hover" : undefined}
+          variants={itemVariants}
+          whileHover={{ scale: 1.01 }}
+          whileTap={{ scale: 0.98 }}
+          className="w-full bg-slate-900 hover:bg-[#00134F] text-white font-bold py-4 rounded-2xl shadow-xl shadow-slate-200 transition-all flex items-center justify-center gap-3 text-sm disabled:opacity-50 disabled:cursor-not-allowed group"
         >
           {loading ? (
-            <>
-              <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-              </svg>
-              Sending...
-            </>
+            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
           ) : (
             <>
-              <Icon className="w-3 h-3 -rotate-60" />
               Send Message
+              <Icon size={16} className="group-hover:translate-x-1 transition-transform" />
             </>
           )}
         </motion.button>
-
       </form>
     </motion.div>
   );

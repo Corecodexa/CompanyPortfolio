@@ -9,11 +9,13 @@ import Service from './pages/Service';
 import ContactPage from './pages/ContactPage';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
+import ScrollToTop from '../ScrollToTop';
 
 const MainLayout = () => {
   return (
     <div className="overflow-x-hidden bg-white text-gray-900">
       <Toaster position="top-right" richColors closeButton />
+      <ScrollToTop/>
       <Navbar />
       <Outlet /> 
       <Footer />
@@ -28,7 +30,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'about', element: <AboutPage /> },
-      { path: 'service', element: <Service /> },
+      { path: 'services', element: <Service /> },
       { path: 'project', element: <Project /> },
       { path: 'team', element: <Team /> },
       { path: 'contact', element: <ContactPage /> },
