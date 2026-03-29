@@ -33,11 +33,11 @@ const AboutStats = () => {
     <section className="py-16 px-6  text-center border-t border-white/5">
       {/* Heading */}
       <div className="max-w-3xl mx-auto mb-14">
-        <p className="text-xs border max-w-40 mx-auto rounded-3xl  py-1 font-bold text-cyan-200 uppercase tracking-widest mb-3">
+        <p className="text-xs border max-w-40 mx-auto rounded-3xl  bg-[#3dc7c3]/10 py-1 font-bold text-[#3dc7c3] uppercase tracking-widest mb-3">
           Our Achievements
         </p>
         <h2 className="text-2xl md:text-3xl font-bold text-black mb-4 tracking-tight">
-          Measurable <span className='text-cyan-200'>Progress</span> 
+          Measurable <span className='bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] bg-clip-text text-transparent'>Progress</span> 
         </h2>
         <p className="text-gray-400 text-sm md:text-[15px] leading-relaxed">
           We connect your business directly to your target audience, eliminating the need to search for clients. They'll find their way to you.
@@ -54,8 +54,8 @@ const AboutStats = () => {
               key={stat.id}
               className="bg-white/[0.02] border border-cyan-400/40 shadow shadow-gray-200 rounded-xl p-6 flex flex-col items-center justify-center transition-colors hover:bg-white/[0.04]"
             >
-              <Icon className="w-8 h-8 p-2 rounded-md bg-cyan-200 text-black mb-3" />
-              <h3 className="text-2xl md:text-3xl font-bold text-cyan-500 mb-1">
+              <Icon className="w-8 h-8 p-2 rounded-md bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4]  text-white mb-3" />
+              <h3 className="text-2xl md:text-3xl font-bold text-[#39d6d0] mb-1">
                 {count.toLocaleString()}<span className="text-cyan-500">{stat.suffix}</span>
               </h3>
               <p className="text-gray-400 text-[11px] md:text-xs uppercase tracking-wider mt-1 text-center">

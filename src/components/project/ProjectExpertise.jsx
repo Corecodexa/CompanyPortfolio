@@ -10,7 +10,7 @@ const ExpertiseCard = ({ icon, title, description, image, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative p-8 rounded-3xl bg-gray-900 border border-white/10 shadow-sm overflow-hidden transition-all duration-500 min-h-[340px] flex flex-col justify-end"
+      className="group relative p-8 rounded-xl bg-gray-900 border border-white/10 shadow-sm overflow-hidden transition-all duration-500 min-h-[340px] flex flex-col justify-end"
     >
       {/* Background Image with Zoom Effect */}
       <div 
@@ -72,7 +72,7 @@ const ProjectExpertise = () => {
   ];
 
   return (
-    <section className="py-24 bg-[#fdfdfd] px-6 lg:px-12 overflow-hidden">
+    <section className="py-12 bg-[#f8f8f8] px-6 lg:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <GlobalHeading 
           badge="Expertise"

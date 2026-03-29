@@ -53,14 +53,14 @@ const AboutStory = () => {
           viewport={{ once: true, margin: "-100px" }}
           className="flex flex-col justify-center"
         >
-          <motion.div variants={slideRight} className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-400/20 bg-cyan-400/5 mb-6 w-fit">
+          <motion.div variants={slideRight} className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-cyan-400/20 bg-[#3fe8e2]/10 mb-6 w-fit">
             <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-[10px] font-bold text-cyan-400 uppercase tracking-[0.3em]">Our Story</span>
+            <span className="text-[10px] font-bold text-[#3fe8e2] uppercase tracking-[0.3em]">Our Story</span>
           </motion.div>
 
-          <motion.h2 variants={slideRight} className="text-4xl md:text-5xl lg:text-6xl font-bold  mb-8 leading-[1.1] tracking-tight">
+          <motion.h2 variants={slideRight} className="text-4xl md:text-5xl lg:text-5xl font-bold  mb-8 leading-[1.1] tracking-tight">
             Building Tomorrow's <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+            <span className="bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] bg-clip-text text-transparent">
               Technology Today
             </span>
           </motion.h2>
