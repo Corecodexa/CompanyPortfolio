@@ -8,7 +8,7 @@ import GlobalHeading from "../common/GlobalHeading";
 
 const ServiceCard = ({ icon, title, description }) => {
   return (
-    <div className="group relative rounded-3xl p-[1px] transition-all duration-500 hover:scale-[1.02]">
+    <div className="group relative rounded-xl p-[1px] transition-all duration-500 hover:scale-[1.02]">
       {/* Animated Border Gradient */}
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#3fe8e2] via-transparent to-[#2DA3B4] opacity-10 group-hover:opacity-100 transition-opacity duration-500" />
       
@@ -105,7 +105,7 @@ const OurServices = () => {
   ];
 
   return (
-    <section className="py-20 bg-[#f8fafc] px-6 lg:px-12 overflow-hidden">
+    <section className="py-12 bg-[#f1f5f9] px-6 lg:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <GlobalHeading 
           badge="Services"

@@ -10,7 +10,7 @@ const OverviewCard = ({ icon: Icon, title, description, color, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative bg-white p-8 rounded-[2rem] border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500"
+      className="group relative bg-white p-8 rounded-xl border border-slate-100 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 transition-all duration-500"
     >
       {/* Decorative Glow */}
       <div 
@@ -45,30 +45,30 @@ const ProjectOverviewCards = () => {
       icon: Target,
       title: "Strategic Vision",
       description: "We align every technical decision with your core business objectives and long-term market strategy.",
-      color: "#0ea5e9" // Sky
+      color: "#42BFDD" // Sky
     },
     {
       icon: Layers,
       title: "Modular Architecture",
       description: "Building scalable, clean, and maintainable codebases that grow seamlessly with your user base.",
-      color: "#2DA3B4" // Brand Primary
+      color: "#42BFDD" // Brand Primary
     },
     {
       icon: Globe2,
       title: "Global Reach",
       description: "Optimized performance and localization strategies to ensure your project succeeds in any market.",
-      color: "#8b5cf6" // Violet
+      color: "#42BFDD" // Violet
     },
     {
       icon: BarChart3,
       title: "Data Driven",
       description: "Integrating advanced analytics and tracking to provide actionable insights into user behavior.",
-      color: "#3fe8e2" // Brand Secondary
+      color: "#42BFDD" // Brand Secondary
     }
   ];
 
   return (
-    <section className="py-20 px-6 lg:px-12 bg-[#fafbfc]">
+    <section className="py-12 px-6 lg:px-12 bg-[#fafbfc]">
       <div className="max-w-7xl mx-auto">
         <GlobalHeading 
           badge="Overview"

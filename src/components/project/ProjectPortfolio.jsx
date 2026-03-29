@@ -55,7 +55,7 @@ const ProjectPortfolio = () => {
   const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
 
   return (
-    <section className="bg-white py-24 px-6 lg:px-12">
+    <section className="bg-white py-12 px-6 lg:px-12">
       <div className="max-w-7xl mx-auto">
         
         {/* Header Section */}
