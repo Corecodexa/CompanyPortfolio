@@ -58,11 +58,9 @@ const TeamValuesSection = () => {
   ];
 
   return (
-<<<<<<< HEAD
-    <section className="relative py-10 px-4 bg-[#f8fafc] overflow-hidden">
-=======
+
     <section className="relative py-12 px-4 bg-[#f8fafc] overflow-hidden">
->>>>>>> f03808aa8152741542b1428bbb01eb7ada8e68ea
+
       {/* Background Accent Glows */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#3fe8e2]/10 rounded-full blur-[120px] animate-pulse" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#2DA3B4]/10 rounded-full blur-[120px]" />

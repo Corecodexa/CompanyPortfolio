@@ -50,10 +50,7 @@ const WorkingProcess = () => {
   ];
 
   return (
-<<<<<<< HEAD
-    <section className="py-10 bg-slate-50 text-slate-900 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-=======
+
     <section className="py-20 bg-slate-50 text-slate-900 overflow-hidden relative">
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
@@ -62,7 +59,7 @@ const WorkingProcess = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
->>>>>>> f03808aa8152741542b1428bbb01eb7ada8e68ea
+
         <GlobalHeading 
           badge="Our Blueprint"
           title="Engineered for"

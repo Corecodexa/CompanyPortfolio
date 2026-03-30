@@ -98,11 +98,9 @@ const Services = () => {
   ];
 
   return (
-<<<<<<< HEAD
+
     <section className="relative px-4 sm:px-6 md:px-12 py-10 bg-[#f8fafc] overflow-hidden">
-=======
-    <section className="relative px-4 sm:px-6 md:px-12 py-12 bg-[#f8fafc] overflow-hidden">
->>>>>>> f03808aa8152741542b1428bbb01eb7ada8e68ea
+
 
       {/* Background Glow Effects */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#3fe8e2]/20 rounded-full blur-[120px]" />

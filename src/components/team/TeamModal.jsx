@@ -38,16 +38,10 @@ const TeamModal = ({ member, isOpen, onClose }) => {
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-<<<<<<< HEAD
             exit={{ opacity: 0, scale: 0.98, y: 10 }}
             className="relative w-full max-w-3xl bg-white overflow-hidden shadow-2xl flex flex-col md:flex-row md:min-h-[450px] min-h-[350px]"
-=======
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
-            transition={{ type: "spring", duration: 0.5, bounce: 0.3 }}
-            className="relative w-full max-w-4xl bg-white shadow-2xl flex flex-col md:flex-row overflow-hidden rounded-sm border border-white/10"
->>>>>>> f03808aa8152741542b1428bbb01eb7ada8e68ea
           >
-            {/* Close Button - More visible & accessible */}
+            {/* Close Button */}
             <button
               onClick={onClose}
               aria-label="Close modal"
@@ -58,18 +52,12 @@ const TeamModal = ({ member, isOpen, onClose }) => {
               </div>
             </button>
 
-<<<<<<< HEAD
             {/* Left: Image Section (Fixed 40% width) */}
-            <div className="w-full md:w-[40%] h-50  md:h-auto relative bg-slate-100 overflow-hidden">
-              <img
-=======
-            {/* Left: Image Section */}
-            <div className="w-full md:w-1/2 h-[300px] md:h-auto relative overflow-hidden bg-slate-200">
+            <div className="w-full md:w-[40%] h-64 md:h-auto relative bg-slate-100 overflow-hidden">
               <motion.img
                 initial={{ scale: 1.1 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.8 }}
->>>>>>> f03808aa8152741542b1428bbb01eb7ada8e68ea
                 src={member.image}
                 alt={member.name}
                 className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
@@ -78,34 +66,22 @@ const TeamModal = ({ member, isOpen, onClose }) => {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 to-transparent" />
             </div>
 
-<<<<<<< HEAD
             {/* Right: Info Section (60%) */}
-            <div className="w-full md:w-[60%] p-3 md:p-10 flex flex-col justify-center bg-white">
-              <header className="mb-">
-                <p className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-2">
-                  {member.role}
-                </p>
-                <h2 className="text-3xl font-light text-slate-900 tracking-tight leading-tight">
-                  {member.name.split(' ')[0]} {''}
-                  <span className="font-serif italic text-2xl">{member.name.split(' ').slice(1).join(' ')}</span>
-=======
-            {/* Right: Info Section */}
-            <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col bg-white overflow-y-auto max-h-[70vh] md:max-h-full">
+            <div className="w-full md:w-[60%] p-8 md:p-12 flex flex-col justify-center bg-white overflow-y-auto max-h-[70vh] md:max-h-full">
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <p className="text-[#2ba19d] text-[11px] font-black uppercase tracking-[0.3em] mb-3">
+                <p className="text-primary text-[10px] font-bold uppercase tracking-[0.2em] mb-3">
                   {member.role}
                 </p>
                 
-                <h2 className="text-4xl font-light text-slate-900 tracking-tight leading-[1.1] mb-6">
-                  {firstName} 
+                <h2 className="text-3xl font-light text-slate-900 tracking-tight leading-tight mb-6">
+                  {firstName} {''}
                   {lastName && (
-                    <> <br /><span className="font-serif italic text-3xl text-slate-700">{lastName}</span></>
+                    <span className="font-serif italic text-2xl text-slate-700">{lastName}</span>
                   )}
->>>>>>> f03808aa8152741542b1428bbb01eb7ada8e68ea
                 </h2>
 
                 <div className="w-12 h-[2px] bg-slate-900 mb-8" />

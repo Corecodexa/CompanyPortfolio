@@ -55,11 +55,9 @@ const TeamHero = () => {
         </div>
 
         {/* Main heading */}
-<<<<<<< HEAD
+
         <h1 className="text-2xl sm:text-5xl md:text-5xl font-bold text-white mb-4 leading-tight">
-=======
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2 leading-tight">
->>>>>>> f03808aa8152741542b1428bbb01eb7ada8e68ea
+
           Our{" "}
           <span className="bg-gradient-to-r from-[#3fe8e2] via-[#2DA3B4] to-[#1E6B7A] bg-clip-text text-transparent inline-block">
             Professional Team
@@ -76,11 +74,9 @@ const TeamHero = () => {
         </div>
 
         {/* Stats section */}
-<<<<<<< HEAD
+
         <div className="flex  items-center justify-center  gap-6 mt-6 mb-5 max-w-xl mx-auto">
-=======
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mt-6 mb-5 max-w-2xl mx-auto">
->>>>>>> f03808aa8152741542b1428bbb01eb7ada8e68ea
+
           {[
             { value: '30+', label: 'Creative Minds' },
             // { value: '10+', label: 'Global Offices' },
