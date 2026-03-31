@@ -89,7 +89,7 @@ const ProjectHero = () => {
         </div>
 
         {/* CTA Button with hover effect */}
-        <div className="mt-4 md:mt-5 flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
+        {/* <div className="mt-4 md:mt-5 flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center">
           <Button 
             text="View Case Studies" 
             variant="primary"
@@ -106,8 +106,7 @@ const ProjectHero = () => {
               </svg>
             }
           />
-          
-          {/* Secondary CTA */}
+
           <button className="px-5 md:px-6 py-2.5 md:py-3 text-sm md:text-base text-white border border-white/30 rounded-lg hover:bg-white/10 transition-all duration-300 backdrop-blur-sm flex items-center gap-2 group">
             <span>Start a Project</span>
             <svg 
@@ -119,7 +118,7 @@ const ProjectHero = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
             </svg>
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   );

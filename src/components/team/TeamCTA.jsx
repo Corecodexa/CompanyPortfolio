@@ -31,7 +31,7 @@ const TeamCTA = () => {
               </Link>
               <Link to="/contact">
                 <Button 
-                  text="Apply Now" 
+                  text="Contact Us" 
                   className="bg-[#2DA3B4] hover:bg-[#1E6B7A] px-8 py-3 text-sm shadow-none"
                 />
               </Link>

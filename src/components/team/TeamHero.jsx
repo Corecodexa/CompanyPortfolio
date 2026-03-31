@@ -66,7 +66,7 @@ const TeamHero = () => {
 
         {/* Description with animated underline */}
         <div className="relative">
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-4 max-w-2xl lg:max-w-3xl mx-auto font-light">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-4 max-w-2xl lg:max-w-3xl mx-auto font-light text-white">
             A diverse group of passionate innovators, designers, and developers 
             dedicated to turning your vision into digital reality.
           </p>

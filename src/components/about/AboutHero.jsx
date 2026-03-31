@@ -64,12 +64,8 @@ const AboutHero = () => {
 
         {/* Description with animated underline */}
         <div className="relative">
-
           <p className="text-gray-200 text-lg sm:text-xl md:text-2xl leading-relaxed mb-4 max-w-3xl mx-auto font-light">
-            We are a leading technology company delivering innovative digital solutions
-
-       
-            that help businesses thrive in the modern digital landscape.
+            We are a leading technology company delivering innovative digital solutions that help businesses thrive in the modern digital landscape.
           </p>
           <div className="w-20 h-1 md:w-24 bg-gradient-to-r from-[#3fe8e2] to-[#2DA3B4] mx-auto rounded-full" />
         </div>
