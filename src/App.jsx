@@ -9,7 +9,7 @@ import Service from './pages/Service';
 import ContactPage from './pages/ContactPage';
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
-import ScrollToTop from '../ScrollToTop';
+import ScrollToTop from './components/common/ScrollToTop';
 
 const MainLayout = () => {
   return (

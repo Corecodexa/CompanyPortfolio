@@ -7,7 +7,7 @@ import {
   FaPhone,
   FaMapMarkerAlt 
 } from 'react-icons/fa';
-import logo from "../../assets/logo.jpeg"
+import logo from "/logo.jpeg"
 const Footer = () => {
   const quickLinks = [
     { id: 1, name: 'Home', url: '/' },
